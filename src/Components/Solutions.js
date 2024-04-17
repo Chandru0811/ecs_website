@@ -10,7 +10,7 @@ import HealthCare from "../assests/healthCare.png";
 function Solutions() {
   return (
     <section className='container-fluid' style={{ backgroundColor: "#E1FDFA" }}>
-            <div className='container mt-5'>
+            <div className='container'>
                 <div className='row pt-5 d-flex'>
                     <div className='col-md-6 col-12'>
                         <div className='row'>

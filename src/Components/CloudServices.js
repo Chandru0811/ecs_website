@@ -6,7 +6,7 @@ import AwsArchitecture from "../assests/awsArchitect.png";
 import AwsMigration from "../assests/awsMigration.png";
 function CloudServices() {
   return (
-    <section className='container-fluid mt-5' style={{ backgroundColor: "#E1FDFA" }}>
+    <section className='container-fluid' style={{ backgroundColor: "#E1FDFA" }}>
     <div className='container'>
         <div className='row pt-5 d-flex'>
             <div className='col-md-6 col-12'>

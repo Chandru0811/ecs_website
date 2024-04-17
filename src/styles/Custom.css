@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn-button {
+    color: #fff;
+    padding: 0.5rem 0.9rem;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #08A391;
+    border-color: #08A391;
+    border-radius: 50px;
+    height: 50px;
+    width: 125px;
+  }
+  
+  .btn-button i {
+    font-weight: 600;
+  }
+  .btn-button:hover {
+    color: #fff;
+    background-color: #072b42;
+    border-color: #072b42;
+  }
+  .dropdown-menu {
+  --bs-dropdown-min-width: 30rem;
+  --bs-dropdown-link-active-bg: var(--bs-tertiary-bg);
+  --bs-dropdown-link-active-color: var(--bs-body-color);
+  }
+
+.card_bg_color {
+    background: linear-gradient(to top, #D3FFFA, #FFFFFF);
+}
+
+.card_bg_color_bottom {
+    background: linear-gradient(to bottom, #D3FFFA, #FFFFFF);
+}
+
+.card_bg_color_right {
+    background: linear-gradient(to right, #D3FFFA, #FFFFFF);
+}
+
+.card_bg_color_left {
+    background: linear-gradient(to left, #D3FFFA, #FFFFFF);
+}
+
+
+.card_image {
+
+    width: 70%;
+    padding: 10px;
+    margin-left: 50px;
+
+}
+
+.card_image_right {
+    height: 80%;
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+}
