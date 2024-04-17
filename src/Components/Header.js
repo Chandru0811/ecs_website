@@ -50,7 +50,7 @@ function OffcanvasExample() {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-center flex-grow-1 pe-3">
+              <Nav className="justify-content-start flex-grow-1 pe-3">
                 {/* <NavDropdown
                   title="Products"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
@@ -244,17 +244,17 @@ function OffcanvasExample() {
                     </div>
                   </div>
                 </NavDropdown> */}
-                <Nav.Link >
-                  <Link to='/products' className='text-decoration-none text-dark'>Products</Link>
+                <Nav.Link className="nav-link-custom">
+                  <Link to='/products' className='text-decoration-none text-dark fw-bold nav-link-text'>Products</Link>
                 </Nav.Link>
-                <Nav.Link>
-                  <Link to="/cloudservices" className='text-decoration-none text-dark'>Cloud Services</Link>
+                <Nav.Link className="nav-link-custom">
+                  <Link to="/cloudservices" className='text-decoration-none text-dark fw-bold mx-3 nav-link-text'>Cloud Services</Link>
                 </Nav.Link>
-                <Nav.Link>
-                  <Link to="/solutions" className='text-decoration-none text-dark'>Solutions</Link>
+                <Nav.Link className="nav-link-custom">
+                  <Link to="/solutions" className='text-decoration-none text-dark fw-bold nav-link-text'>Solutions</Link>
                 </Nav.Link>
-                <Nav.Link>
-                  <Link to="/aboutus" className='text-decoration-none text-dark'>About</Link>
+                <Nav.Link className="nav-link-custom">
+                  <Link to="/aboutus" className='text-decoration-none text-dark fw-bold mx-3 nav-link-text'>About</Link>
                 </Nav.Link>
               </Nav>
               <Link to="/contactus">

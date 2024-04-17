@@ -14,21 +14,25 @@
     border-radius: 50px;
     height: 50px;
     width: 125px;
-  }
-  
-  .btn-button i {
+} 
+.btn-button i {
     font-weight: 600;
-  }
-  .btn-button:hover {
+}
+.btn-button:hover {
     color: #fff;
     background-color: #072b42;
     border-color: #072b42;
-  }
-  .dropdown-menu {
+}
+
+.dropdown-menu {
   --bs-dropdown-min-width: 30rem;
   --bs-dropdown-link-active-bg: var(--bs-tertiary-bg);
   --bs-dropdown-link-active-color: var(--bs-body-color);
-  }
+}
+
+.nav-link-custom:hover .nav-link-text {
+    color: #08A391 !important;
+}
 
 .card_bg_color {
     background: linear-gradient(to top, #D3FFFA, #FFFFFF);
@@ -60,4 +64,9 @@
     width: 80%;
     padding: 10px;
     margin-top: 20px;
+}
+
+.contact-row>*{
+    padding-left: 0px ;
+    padding-right: 0px ;
 }
