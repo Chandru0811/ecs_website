@@ -25,7 +25,7 @@ import MarketingTeams from '../assests/marketingteams_icon.png';
 import CustomerSupport from '../assests/customersupport_icon.png';
 import ECommerce from '../assests/ecommerce_icon.png';
 import Healthcare from '../assests/healthcare_icon.png';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function OffcanvasExample() {
 
@@ -33,10 +33,10 @@ function OffcanvasExample() {
 
   return (
     <>
-      <Navbar key={expand} expand={expand} className="py-3" style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.3)", backgroundColor: "rgba(255, 255, 255, .82)" }}>
+      <Navbar key={expand} expand={expand} className="py-3 header">
         <Container fluid>
           <Navbar.Brand>
-           <Link to="/"><img src={Logo} alt='Logo' className='img-fluid' width={200} /></Link>
+           <Link to="/"><img src={Logo} alt='Logo' className='img-fluid' width={230} /></Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
@@ -50,7 +50,7 @@ function OffcanvasExample() {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-start flex-grow-1 pe-3">
+              <Nav className="justify-content-start align-items-center flex-grow-1 pe-3 navbar-nav">
                 {/* <NavDropdown
                   title="Products"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
