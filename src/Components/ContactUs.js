@@ -1,8 +1,10 @@
 import React from "react";
 import Contact from "../assests/contact.png";
-import Mail from "../assests/mail.png";
-import Phone from "../assests/phone.png";
-import Location from "../assests/location.png";
+import {BiLogoGmail , BiSolidPhoneCall  } from "react-icons/bi";
+
+
+import { MdOutlineMyLocation } from "react-icons/md";
+
 
 function ContactUs() {
   return (
@@ -22,17 +24,20 @@ function ContactUs() {
               </span>
             </p>
             <div className="d-flex mb-3">
-              <img src={Mail} alt="avatar" className="img-fluid mx-2" />
+            <div className="mx-2 contact_icon_color d-flex align-items-center"><BiLogoGmail  /></div>
+            
               <p className="m-1">info@ecscloudinfotech.com</p>
             </div>
 
             <div className="d-flex mb-3">
-              <img src={Phone} alt="avatar" className="img-fluid mx-2" />
+            <div className="mx-2 contact_icon_color d-flex align-items-center"><BiSolidPhoneCall  /></div>
+              
               <p className="m-1">+65 8894 1306</p>
             </div>
 
             <div className="d-flex mb-3">
-              <img src={Location} alt="avatar" className="img-fluid mx-2" />
+            <div className="mx-2 contact_icon_color d-flex align-items-center"><MdOutlineMyLocation   /></div>
+              
               <p className="m-1">
                 The Alexcier, 237 Alexandra Road, #04-10, Singapore-159929.
               </p>
