@@ -9,7 +9,7 @@ function CloudServices() {
     <section className='container-fluid' style={{ backgroundColor: "#E1FDFA" }}>
     <div className='container'>
         <div className='row pt-5 d-flex'>
-            <div className='col-md-6 col-12'>
+            <div className='col-md-6 col-12 order-md-1 order-1'>
                 <div className='row'>
                     <div className='col-md-10 offset-md-1'>
                         <p className="mt-5 text-start  fs-6" style={{ color: "#08A391" }}>Cloud  Services  Managemnet |  Cloud ECS Infoteh</p>
@@ -18,7 +18,7 @@ function CloudServices() {
                     </div>
                 </div>
             </div>
-            <div className='col-md-6 col-12'>
+            <div className='col-md-6 col-12 order-md-2'>
                 <img className="img-fluid" src={EcsCloudServices} alt='manageCloud' />
             </div>
         </div>
@@ -41,7 +41,7 @@ function CloudServices() {
     </div>
     <div className='container'>
         <div className='row pt-5 d-flex'>
-            <div className='col-md-6 col-12'>
+            <div className='col-md-6 col-12 order-md-1 order-1'>
                 <div className='row'>
                     <div className='col-md-10 offset-md-1'>
                         <p className="mt-5 text-start  fs-6" style={{ color: "#08A391" }}>Efficient  Deployement | Optimal Security | Cost Optimization | High Scalability</p>
@@ -50,7 +50,7 @@ function CloudServices() {
                     </div>
                 </div>
             </div>
-            <div className='col-md-6 col-12'>
+            <div className='col-md-6 col-12 order-md-2'>
                 <img className="img-fluid" src={AwsDevops} alt='awsDevops' />
             </div>
         </div>
@@ -72,8 +72,8 @@ function CloudServices() {
         </div>
     </div>
     <div className='container'>
-        <div className='row pt-5 d-flex'>
-            <div className='col-md-6 col-12'>
+        <div className='row pt-5 pb-5 d-flex'>
+            <div className='col-md-6 col-12 order-md-1 order-1'>
                 <div className='row'>
                     <div className='col-md-10 offset-md-1'>
                         <p className="mt-5 text-start  fs-6" style={{ color: "#08A391" }}>Efficient  Deployement | Optimal Security | Cost Optimization | High Scalability</p>
@@ -82,7 +82,7 @@ function CloudServices() {
                     </div>
                 </div>
             </div>
-            <div className='col-md-6 col-12'>
+            <div className='col-md-6 col-12 order-md-2'>
                 <img className="img-fluid" src={AwsMigration} alt='awsMigration' />
             </div>
         </div>

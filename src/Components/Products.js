@@ -12,26 +12,26 @@ function Products() {
         <section className='container-fluid' style={{ backgroundColor: "#E1FDFA" }}>
             <div className='container'>
                 <div className='row pt-5 d-flex'>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12 order-md-1 order-1'>
                         <div className='row'>
                             <div className='col-md-10 offset-md-1'>
                                 <p className="mt-5 text-start  fs-6" style={{ color: "#08A391" }}>ECS CRM Powering Your Success</p>
                                 <h3 className='d-flex text-start display-5 fw-medium' style={{ color: "rgba(0, 0, 0, 0.722)" }}>Revolutionize Your <br></br> Business with ECS CRM</h3>
-                                <p className="pt-3 text-start fs-4">End-to-end,fully customizable CRM solution for <br></br> growing bussiness and enterprises.</p>
+                                <p className="pt-3 text-start fs-4">End-to-end,fully customizable CRM solution for growing bussiness and enterprises.</p>
                             </div>
                         </div>
                     </div>
-                    <div className='col-md-6 col-12' style={{ backgroundColor: "#ffffff", borderRadius: "20px" }}>
+                    <div className='col-md-6 col-12 order-md-2 ' style={{ backgroundColor: "#ffffff", borderRadius: "20px" }}>
                         <img className="img-fluid" src={EcsCrm} alt='ecsCrm' />
                     </div>
                 </div>
             </div>
             <div className='container'>
                 <div className='row mt-5 d-flex'>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12 '>
                         <img className="img-fluid" src={EcsBooking} alt='ecsBooking' />
                     </div>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12 '>
                         <div className='row'>
                             <div className='col-md-10 offset-md-1'>
                                 <p className="mt-5 text-start  fs-6" style={{ color: "#08A391" }}>ECS Appointment Booking Made Easy</p>
@@ -44,7 +44,7 @@ function Products() {
             </div>
             <div className='container'>
                 <div className='row mt-5 d-flex'>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12 order-md-1 order-1'>
                         <div className='row'>
                             <div className='col-md-10 offset-md-1'>
                                 <p className="mt-5 text-start  fs-6" style={{ color: "#08A391" }}>WHATSAPP  CHATBOOT   INTEGRATION   &  API  FOR  ENHANCED   ENGAGEMENT   |   ECS  Cloud  Infotech</p>
@@ -53,7 +53,7 @@ function Products() {
                             </div>
                         </div>
                     </div>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12 order-md-2'>
                         <img className="img-fluid" src={WhatsappApi} alt='ecsWhatsappapi' />
                     </div>
                 </div>
@@ -76,7 +76,7 @@ function Products() {
             </div>
             <div className='container'>
                 <div className='row pt-5 d-flex'>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12  order-md-1 order-1'>
                         <div className='row pt-5'>
                             <div className='col-md-10 offset-md-1'>
                                 <h3 className='d-flex text-start display-5 fw-medium' style={{ color: "rgba(0, 0, 0, 0.722)" }}>Mobile  Attendance  Application</h3>
@@ -84,7 +84,7 @@ function Products() {
                             </div>
                         </div>
                     </div>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12 order-md-2'>
                         <img className="img-fluid" src={EcsAttendance} alt='ecsAttendance' />
                     </div>
                 </div>
@@ -106,7 +106,7 @@ function Products() {
             </div>
             <div className='container'>
                 <div className='row pt-5 d-flex'>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12 order-md-1 order-1'>
                         <div className='row'>
                             <div className='col-md-10 offset-md-1'>
                                 <p className="mt-5 text-start  fs-6" style={{ color: "#08A391" }}>APPLICANT  TRACKING  SYSTEM  |   ECS  Cloud  Infotech</p>
@@ -115,7 +115,7 @@ function Products() {
                             </div>
                         </div>
                     </div>
-                    <div className='col-md-6 col-12'>
+                    <div className='col-md-6 col-12 order-md-2'>
                         <img className="img-fluid" src={EcsTracking} alt='ecsTracking' />
                     </div>
                 </div>
