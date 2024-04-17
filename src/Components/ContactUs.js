@@ -7,9 +7,10 @@ import Location from "../assests/location.png";
 function ContactUs() {
   return (
     <section>
-      <div className="container  my-4">
-        <div className="row">
-          <div className="col-md-6 col-12 mt-5">
+      <div className="container-fluid my-4">
+        <div className="row contact-row">
+          <div className="col-1"></div>
+          <div className="col-md-5 col-12 mt-5">
             <h1>
               Let's <span className="text-success">Talk!</span>
             </h1>
@@ -37,8 +38,8 @@ function ContactUs() {
               </p>
             </div>
           </div>
-          <div className="col-md-6 col-12">
-            <img src={Contact} alt="" className="img-fluid" />
+          <div className="col-md-6 col-12 d-flex justify-content-end ">
+           <img src={Contact} alt="contact" className="img-fluid" ></img>
           </div>
         </div>
 
@@ -88,7 +89,7 @@ function ContactUs() {
               </div>
             </div>
             <div className="d-flex justify-content-center">
-              <button className="btn btn-success" type = "button">Submit</button>
+              <button className="btn  btn-success" type = "button">Submit</button>
             </div>
           </div>
         </form>
