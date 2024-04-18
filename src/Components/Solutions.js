@@ -12,7 +12,7 @@ function Solutions() {
     <section className="container-fluid" style={{ backgroundColor: "#E1FDFA" }}>
       <div className="container">
         <div className="row pt-5 d-flex">
-          <div className="col-md-6 col-12 order-md-1 order-1">
+          <div className="col-md-7 col-12 order-md-1 order-1">
             <div className="row">
               <div className="col-md-10 offset-md-1">
                 <p
@@ -34,21 +34,21 @@ function Solutions() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-12 order-md-2">
-            <img className="img-fluid d-flex justify-content-center align-items-center" src={Education} alt="education" />
+          <div className="col-md-5 col-12 order-md-2 d-flex justify-content-center align-items-center">
+            <img className="img-fluid" src={Education} alt="education" />
           </div>
         </div>
       </div>
       <div className="container">
         <div className="row mt-5 d-flex">
-          <div className="col-md-6 col-12">
+          <div className="col-md-5 col-12 d-flex justify-content-center align-items-center">
             <img
-              className="img-fluid d-flex justify-content-center align-items-center"
+              className="img-fluid"
               src={MarketingAgencies}
               alt="ecsMarketing"
             />
           </div>
-          <div className="col-md-6 col-12">
+          <div className="col-md-7 col-12">
             <div className="row">
               <div className="col-md-10 offset-md-1">
                 <p
@@ -75,7 +75,7 @@ function Solutions() {
       </div>
       <div className="container">
         <div className="row mt-5 d-flex">
-          <div className="col-md-6 col-12 order-md-1 order-1">
+          <div className="col-md-7 col-12 order-md-1 order-1">
             <div className="row">
               <div className="col-md-10 offset-md-1">
                 <p
@@ -97,21 +97,21 @@ function Solutions() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-12 order-md-2">
-            <img className="img-fluid d-flex justify-content-center align-items-center" src={SalesTeam} alt="ecsSalesteam" />
+          <div className="col-md-5 col-12 order-md-2 d-flex justify-content-center align-items-center">
+            <img className="img-fluid" src={SalesTeam} alt="ecsSalesteam" />
           </div>
         </div>
       </div>
       <div className="container">
         <div className="row mt-5 d-flex">
-          <div className="col-md-6 col-12">
+          <div className="col-md-5 col-12 d-flex justify-content-center align-items-center">
             <img
-              className="img-fluid d-flex justify-content-center align-items-center"
+              className="img-fluid"
               src={MarketingTeam}
               alt="ecsMarketingteam"
             />
           </div>
-          <div className="col-md-6 col-12">
+          <div className="col-md-7 col-12">
             <div className="row">
               <div className="col-md-10 offset-md-1">
                 <p
@@ -140,7 +140,7 @@ function Solutions() {
       </div>
       <div className="container">
         <div className="row pt-5 d-flex">
-          <div className="col-md-6 col-12 order-md-1 order-1">
+          <div className="col-md-7 col-12 order-md-1 order-1">
             <div className="row pt-5">
               <div className="col-md-10 offset-md-1">
                 <h3
@@ -156,9 +156,9 @@ function Solutions() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-12 order-md-2">
+          <div className="col-md-5 col-12 order-md-2 d-flex justify-content-center align-items-center">
             <img
-              className="img-fluid d-flex justify-content-center align-items-center"
+              className="img-fluid"
               src={CustomerSupport}
               alt="ecsCustomersupport"
             />
@@ -167,10 +167,10 @@ function Solutions() {
       </div>
       <div className="container">
         <div className="row pt-5 d-flex">
-          <div className="col-md-6 col-12">
-            <img className="img-fluid d-flex justify-content-center align-items-center" src={ECommerce} alt="ecsEcommerce" />
+          <div className="col-md-5 col-12 d-flex justify-content-center align-items-center">
+            <img className="img-fluid" src={ECommerce} alt="ecsEcommerce" />
           </div>
-          <div className="col-md-6 col-12">
+          <div className="col-md-7 col-12">
             <div className="row pt-5">
               <div className="col-md-10 offset-md-1">
                 <h3
@@ -190,7 +190,7 @@ function Solutions() {
       </div>
       <div className="container">
         <div className="row pt-5 pb-5 d-flex">
-          <div className="col-md-6 col-12 order-md-1 order-1">
+          <div className="col-md-7 col-12 order-md-1 order-1">
             <div className="row">
               <div className="col-md-10 offset-md-1">
                 <p
@@ -214,7 +214,7 @@ function Solutions() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-12 order-md-2">
+          <div className="col-md-5 col-12 order-md-2 d-flex justify-content-center align-items-center">
             <img className="img-fluid" src={HealthCare} alt="ecsHealthcare" />
           </div>
         </div>
