@@ -1,10 +1,62 @@
 import React from "react";
 import Contact from "../assests/contact.png";
 import { BiLogoGmail, BiSolidPhoneCall } from "react-icons/bi";
-
 import { MdOutlineMyLocation } from "react-icons/md";
+import { toast } from "react-toastify";
+import * as yup from "yup";
+// import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import {api} from "../Config/URL";
+
+const validationSchema = yup.object().shape({
+  first_name: yup.string().required("*First Name is required"),
+  last_name:yup.string().required("*Last Name is required"),
+  phone: yup
+    .string()
+    .required("*Phone is required")
+    .matches(/^[0-9]{10}$/, "*Phone Number must be 10 digits"),
+  email: yup.string().required("*Email is required"),
+  description_info : yup.string().required("*Enquiry is required"),
+});
+
 
 function ContactUs() {
+
+  console.log("Api :",api);
+  // const companyId = sessionStorage.getItem("companyId");
+  // const navigate = useNavigate();
+  const formik = useFormik({
+    initialValues: {
+      company_id: "",
+      first_name: "",
+      last_name: "",
+      phone: "",
+      email: "",
+      description_info: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: async (data) => {
+      console.log("Contact in Ecs Website:",data);
+      data.company_id = 2;
+      data.company = "ECSCloudInfotech";
+      try {
+        const response = await api.post(`newClient`, data, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.status === 201) {
+          toast.success("Thank You for Contacting Us! We'll be in touch soon!");
+          // navigate("/login");
+        } else {
+          toast.error(response.data.message);
+        }
+      } catch (error) {
+        toast.error("Failed: " + error.message);
+      }
+    },
+  });
+
   return (
     <section>
       <div className="container-fluid my-4">
@@ -52,7 +104,7 @@ function ContactUs() {
           </div>
         </div>
 
-        <form>
+        <form onSubmit={formik.handleSubmit}>
           <div
             className="container mt-5 py-4 p-5"
             style={{ background: "#E1FDFA", borderRadius: "20px" }}
@@ -63,15 +115,41 @@ function ContactUs() {
                   First Name<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <input type="text" className="form-control" />
+                  <input 
+                    type="text"
+                     className={`form-control  ${
+                       formik.touched.first_name && formik.errors.first_name
+                         ? "is-invalid"
+                         : ""
+                     }`}
+                     {...formik.getFieldProps("first_name")}
+                     name="first_name"
+                     id="first_name"
+                  />
+                  {formik.touched.first_name && formik.errors.first_name && (
+                    <p className="text-danger">{formik.errors.first_name}</p>
+                  )}
                 </div>
               </div>
               <div className="col-md-6 col-12 mb-2">
                 <lable className="form-lable">
-                  Last Email<span className="text-danger">*</span>
+                  Last Name<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <input type="text" className="form-control" />
+                  <input 
+                    type="text"
+                     className={`form-control  ${
+                       formik.touched.last_name && formik.errors.last_name
+                         ? "is-invalid"
+                         : ""
+                     }`}
+                     {...formik.getFieldProps("last_name")}
+                     name="last_name"
+                     id="last_name"
+                  />
+                  {formik.touched.last_name && formik.errors.last_name && (
+                    <p className="text-danger">{formik.errors.last_name}</p>
+                  )}
                 </div>
               </div>
               <div className="col-md-6 col-12 mb-2">
@@ -79,7 +157,20 @@ function ContactUs() {
                   Eamil<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <input type="email" className="form-control" />
+                  <input 
+                  type="email"
+                   name="email"
+                   className={`form-size form-control  ${
+                     formik.touched.email && formik.errors.email
+                       ? "is-invalid"
+                       : ""
+                   }`}
+                   {...formik.getFieldProps("email")}
+                   id="email"
+                  />
+                  {formik.touched.email && formik.errors.email && (
+                    <p className="text-danger">{formik.errors.email}</p>
+                  )}
                 </div>
               </div>
               <div className="col-md-6 col-12 mb-2">
@@ -87,7 +178,20 @@ function ContactUs() {
                   Mobile<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <input type="text" className="form-control" />
+                  <input 
+                    type="tel"
+                    name="phone"
+                    className={`form-size form-control  ${
+                      formik.touched.phone && formik.errors.phone
+                        ? "is-invalid"
+                        : ""
+                    }`}
+                    {...formik.getFieldProps("phone")}
+                    id="phone"
+                  />
+                  {formik.touched.phone && formik.errors.phone && (
+                    <p className="text-danger">{formik.errors.phone}</p>
+                  )}
                 </div>
               </div>
               <div className="col-md-12 col-12 mb-2">
@@ -95,12 +199,18 @@ function ContactUs() {
                   Enquiry<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <textarea type="text" rows="5" className="form-control" />
+                  <textarea {...formik.getFieldProps("description_info")}
+                     name="description_info"
+                    className="form-control "
+                  ></textarea>
+                  {formik.touched.description_info && formik.errors.description_info && (
+                    <p className="text-danger">{formik.errors.description_info}</p>
+                  )}
                 </div>
               </div>
             </div>
             <div className="d-flex justify-content-center">
-              <button className="btn  btn-success" type="button">
+              <button className="btn btn-button" type="submit">
                 Submit
               </button>
             </div>
