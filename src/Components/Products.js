@@ -7,7 +7,6 @@ import EcsAttendance from "../assests/attendance.png";
 import FacialRecognition from "../assests/facialRecognition.webp";
 import EcsTracking from "../assests/tracking.png";
 import SchoolManagement from "../assests/schoolManagement.png";
-import account from "../assests/marketingTeam.png";
 function Products() {
   return (
     <section className="container-fluid" style={{ backgroundColor: "#E1FDFA" }}>
