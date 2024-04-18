@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { api } from "../Config/URL";
 import CRM from "../assests/About.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -18,7 +17,6 @@ const validationSchema = Yup.object().shape({
   additionalInformation: Yup.string().required("*Description is required"),
 });
 const Book = () => {
-  console.log("api", api);
   const formik = useFormik({
     initialValues: {
       appointmentFor: "",
@@ -35,11 +33,15 @@ const Book = () => {
       console.log(data);
 
       try {
-        const response = await api.post(`/book-appointment`, data, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await axios.post(
+          `https://crmlah.com/ecscrm/api/book-appointment`,
+          data,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         if (response.status === 201) {
           toast.success("Thank You for Request Demo! We'll be in touch soon!");
           const mailContent = `
@@ -175,12 +177,15 @@ const Book = () => {
                 </body>
               </html>`;
           try {
-            const response = await api.post(`sendMail`, {
-              toMail: data.email,
-              fromMail: data.email,
-              subject: data.appointmentName,
-              htmlContent: mailContent,
-            });
+            const response = await axios.post(
+              `https://crmlah.com/ecscrm/api/sendMail`,
+              {
+                toMail: data.email,
+                fromMail: data.email,
+                subject: data.appointmentName,
+                htmlContent: mailContent,
+              }
+            );
           } catch (error) {
             toast.error("Mail Not Send");
           }

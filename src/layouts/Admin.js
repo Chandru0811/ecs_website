@@ -24,7 +24,7 @@ function Admin() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/ecs">
         <ToastContainer position="top-center" />
         <Header />
         <Routes>

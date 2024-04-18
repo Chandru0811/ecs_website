@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import * as yup from "yup";
 // import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { api } from "../Config/URL";
+import axios from "axios";
 
 const validationSchema = yup.object().shape({
   first_name: yup.string().required("*First Name is required"),
@@ -20,7 +20,6 @@ const validationSchema = yup.object().shape({
 });
 
 function ContactUs() {
-  console.log("Api :", api);
   // const companyId = sessionStorage.getItem("companyId");
   // const navigate = useNavigate();
   const formik = useFormik({
@@ -40,11 +39,15 @@ function ContactUs() {
       data.lead_status = "Processed";
       data.lead_source = "Contact Page";
       try {
-        const response = await api.post(`newClient`, data, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await axios.post(
+          `https://crmlah.com/ecscrm/api/newClient`,
+          data,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         if (response.status === 201) {
           toast.success("Thank You for Contacting Us! We'll be in touch soon!");
           // navigate("/login");
