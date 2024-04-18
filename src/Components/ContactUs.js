@@ -1,10 +1,8 @@
 import React from "react";
 import Contact from "../assests/contact.png";
-import {BiLogoGmail , BiSolidPhoneCall  } from "react-icons/bi";
-
+import { BiLogoGmail, BiSolidPhoneCall } from "react-icons/bi";
 
 import { MdOutlineMyLocation } from "react-icons/md";
-
 
 function ContactUs() {
   return (
@@ -24,33 +22,41 @@ function ContactUs() {
               </span>
             </p>
             <div className="d-flex mb-3">
-            <div className="mx-2 contact_icon_color d-flex align-items-center"><BiLogoGmail  /></div>
-            
+              <div className="mx-1 contact_icon_color d-flex align-items-center">
+                <BiLogoGmail />
+              </div>
+
               <p className="m-1">info@ecscloudinfotech.com</p>
             </div>
 
             <div className="d-flex mb-3">
-            <div className="mx-2 contact_icon_color d-flex align-items-center"><BiSolidPhoneCall  /></div>
-              
+              <div className="mx-1 contact_icon_color d-flex align-items-center">
+                <BiSolidPhoneCall />
+              </div>
+
               <p className="m-1">+65 8894 1306</p>
             </div>
 
             <div className="d-flex mb-3">
-            <div className="mx-2 contact_icon_color d-flex align-items-center"><MdOutlineMyLocation   /></div>
-              
+              <div className="mx-1 contact_icon_color d-flex align-items-center ">
+                <MdOutlineMyLocation />
+              </div>
+
               <p className="m-1">
                 The Alexcier, 237 Alexandra Road, #04-10, Singapore-159929.
               </p>
             </div>
           </div>
           <div className="col-md-6 col-12 d-flex justify-content-end ">
-           <img src={Contact} alt="contact" className="img-fluid" ></img>
+            <img src={Contact} alt="contact" className="img-fluid"></img>
           </div>
         </div>
 
         <form>
-          <div className="container mt-5 py-4 p-5"
-            style={{ background: "#E1FDFA", borderRadius: "20px" }} >
+          <div
+            className="container mt-5 py-4 p-5"
+            style={{ background: "#E1FDFA", borderRadius: "20px" }}
+          >
             <div className="row">
               <div className="col-md-6 col-12 mb-2">
                 <lable className="form-lable">
@@ -94,7 +100,9 @@ function ContactUs() {
               </div>
             </div>
             <div className="d-flex justify-content-center">
-              <button className="btn  btn-success" type = "button">Submit</button>
+              <button className="btn  btn-success" type="button">
+                Submit
+              </button>
             </div>
           </div>
         </form>
