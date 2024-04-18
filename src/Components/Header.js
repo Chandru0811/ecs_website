@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Logo from "../assests/ecs_logo.png";
+import AWS from "../assests/badge-new.png";
 // import CRM from "../assests/crm_icon.png";
 // import WhatsApp from "../assests/whatsapp_icon.png";
 // import Attendance from "../assests/attendance_icon.png";
@@ -46,7 +47,7 @@ function OffcanvasExample() {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                Cloud ECS
+                ECSCloudInfotech
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
@@ -277,6 +278,14 @@ function OffcanvasExample() {
                   </Link>
                 </Nav.Link>
               </Nav>
+              <Link to="#">
+                <img
+                  src={AWS}
+                  alt="..."
+                  width="160"
+                  className=" img-fluid AWS_header "
+                />
+              </Link>
               <Link to="/contactus">
                 <button type="button" className="btn btn-button">
                   Contact

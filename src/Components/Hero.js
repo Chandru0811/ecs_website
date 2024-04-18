@@ -27,7 +27,7 @@ function Hero() {
               Up To 70% Funding
             </h1>
           </div>
-          <div className="px-3 mb-5 mt-4 text-center">
+          <div className="px-3 mb-3 mt-4 text-center">
             <h5>
               Offering easy and effective solutions for even the most intricate
               problems, our &nbsp;
@@ -41,9 +41,11 @@ function Hero() {
             </h5>
           </div>
         </div>
-        <Link to="/DemoBooking">
-          <button className="btn btn-primary ">Book</button>
-        </Link>
+        <div className="d-flex mb-5 align-items-center justify-content-center">
+          <Link to="/DemoBooking">
+            <button className="btn btn-button">Book</button>
+          </Link>
+        </div>
       </div>
       <div
         className="container-fluid"

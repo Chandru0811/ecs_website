@@ -9,19 +9,18 @@ loadConfig().then((config) => {
   });
 });
 
-// Add a request interceptor
-axios.interceptors.request.use(
-  function (config) {
-    const token = sessionStorage.getItem("token");
+// axios.interceptors.request.use(
+//   function (config) {
+//     const token = sessionStorage.getItem("token");
 
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+//     if (token) {
+//       config.headers.Authorization = `Bearer ${token}`;
+//     }
 
-    return config;
-  },
-  function (error) {
-    return Promise.reject(error);
-  }
-);
+//     return config;
+//   },
+//   function (error) {
+//     return Promise.reject(error);
+//   }
+// );
 export {api};

@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+.AWS_header {
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  right: 20%;
+}
+
+@media only screen and (max-width: 1199px) {
+  .AWS_header {
+    display: none;
+  }
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -14,12 +27,12 @@
   z-index: 999;
 }
 
-.Nav_image{
-    position: sticky;
-    top: 0;
-   width: 100px;
-   height: 100px;
- margin-right: 120px;
+.Nav_image {
+  position: sticky;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  margin-right: 120px;
 }
 
 .btn-button {

@@ -38,6 +38,7 @@ function ContactUs() {
       data.company_id = 2;
       data.company = "ECSCloudInfotech";
       data.lead_status = "Processed";
+      data.lead_source = "Contact Page";
       try {
         const response = await api.post(`newClient`, data, {
           headers: {

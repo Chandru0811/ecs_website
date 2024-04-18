@@ -22,7 +22,7 @@ function Products() {
                   ECS CRM Powering Your Success
                 </p>
                 <h3
-                  className="d-flex text-start display-5 fw-medium"
+                  className="d-flex text-start display-6 fw-medium"
                   style={{ color: "rgba(0, 0, 0, 0.722)" }}
                 >
                   Revolutionize Your <br></br> Business with ECS CRM
@@ -35,8 +35,8 @@ function Products() {
             </div>
           </div>
           <div
-            className="col-md-6 col-12 order-md-2 "
-            style={{ backgroundColor: "#ffffff", borderRadius: "20px" }}
+            className="col-md-6 col-12 d-flex justify-content-center align-items-center order-md-2 "
+            // style={{ backgroundColor: "#ffffff", borderRadius: "20px" }}
           >
             <img className="img-fluid" src={EcsCrm} alt="ecsCrm" />
           </div>
@@ -44,7 +44,7 @@ function Products() {
       </div>
       <div className="container">
         <div className="row mt-5 d-flex">
-          <div className="col-md-6 col-12 ">
+          <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
             <img className="img-fluid" src={EcsBooking} alt="ecsBooking" />
           </div>
           <div className="col-md-6 col-12 ">
@@ -57,12 +57,12 @@ function Products() {
                   ECS Appointment Booking Made Easy
                 </p>
                 <h3
-                  className="d-flex text-start display-5 fw-medium"
+                  className="d-flex text-start display-6 fw-medium"
                   style={{ color: "rgba(0, 0, 0, 0.722)" }}
                 >
                   Effortless Booking with ECS Appointments
                 </h3>
-                <p className="pt-3 text-start fs-4">
+                <p className="pt-3 text-start fs-5">
                   Customers and clients can schedule appointments with the staff
                   members.
                 </p>
@@ -84,25 +84,25 @@ function Products() {
                   ECS Cloud Infotech
                 </p>
                 <h3
-                  className="d-flex text-start display-5 fw-medium"
+                  className="d-flex text-start display-6 fw-medium"
                   style={{ color: "rgba(0, 0, 0, 0.722)" }}
                 >
                   Automated Chatbot With Instant Responses
                 </h3>
-                <p className="pt-3 text-start fs-4">
+                <p className="pt-3 text-start fs-5">
                   Set up a chatbot as your 24/7 customer service.
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-12 order-md-2">
+          <div className="col-md-6 col-12 order-md-2 d-flex justify-content-center align-items-center">
             <img className="img-fluid" src={WhatsappApi} alt="ecsWhatsappapi" />
           </div>
         </div>
       </div>
       <div className="container">
         <div className="row mt-5 d-flex">
-          <div className="col-md-6 col-12">
+          <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
             <img className="img-fluid" src={EcsHr} alt="ecsHr" />
           </div>
           <div className="col-md-6 col-12">
@@ -116,12 +116,12 @@ function Products() {
                   PROJECT MANAGEMENT SYSTEM
                 </p>
                 <h3
-                  className="d-flex text-start display-5 fw-medium"
+                  className="d-flex text-start display-6 fw-medium"
                   style={{ color: "rgba(0, 0, 0, 0.722)" }}
                 >
                   Human Resource Management System
                 </h3>
-                <p className="pt-3 text-start fs-4">
+                <p className="pt-3 text-start fs-5">
                   A Human Resouce Managemnet Systems (HRMS) is a Software
                   Solutions that streamlines and automatesvarious hr functions,
                   including recruitment , employeerecords , payroll , benefits
@@ -138,19 +138,19 @@ function Products() {
             <div className="row pt-5">
               <div className="col-md-10 offset-md-1">
                 <h3
-                  className="d-flex text-start display-5 fw-medium"
+                  className="d-flex text-start display-6 fw-medium"
                   style={{ color: "rgba(0, 0, 0, 0.722)" }}
                 >
                   Mobile Attendance Application
                 </h3>
-                <p className="pt-3 text-start fs-4">
+                <p className="pt-3 text-start fs-6">
                   Leverage our expertise and get a high-performance and scalable
                   mobile application.
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-12 order-md-2">
+          <div className="col-md-6 col-12 d-flex justify-content-center align-items-center order-md-2">
             <img
               className="img-fluid"
               src={EcsAttendance}
@@ -163,7 +163,7 @@ function Products() {
         <div className="row pt-5 d-flex">
           <div className="col-md-6 col-12">
             <img
-              className="img-fluid"
+              className="img-fluid d-flex justify-content-center align-items-center"
               src={FacialRecognition}
               alt="ecsFacerecognitionApp"
             />
@@ -172,12 +172,12 @@ function Products() {
             <div className="row pt-5">
               <div className="col-md-10 offset-md-1">
                 <h3
-                  className="d-flex text-start display-5 fw-medium"
+                  className="d-flex text-start display-6 fw-medium"
                   style={{ color: "rgba(0, 0, 0, 0.722)" }}
                 >
                   Facial Recognition Application
                 </h3>
-                <p className="pt-3 text-start fs-4">
+                <p className="pt-3 text-start fs-5">
                   Leverage our expertise and get a high-performance and scalable
                   mobile application.
                 </p>
@@ -198,12 +198,12 @@ function Products() {
                   APPLICANT TRACKING SYSTEM | ECS Cloud Infotech
                 </p>
                 <h3
-                  className="d-flex text-start display-5 fw-medium"
+                  className="d-flex text-start display-6 fw-medium"
                   style={{ color: "rgba(0, 0, 0, 0.722)" }}
                 >
                   An Applicant Tracking System Built by Recruiters
                 </h3>
-                <p className="pt-3 text-start fs-4">
+                <p className="pt-3 text-start fs-5">
                   Manatal is a comprehensive cloud-based ATS - Applicant
                   Tracking System to make your recruitment process easier.
                   Through effective pipelines, AI-driven insights, and applicant
@@ -212,36 +212,33 @@ function Products() {
               </div>
             </div>
           </div>
-          <div className="col-md-6 col-12 order-md-2">
+          <div className="col-md-6 col-12 d-flex justify-content-center align-items-center order-md-2">
             <img className="img-fluid" src={EcsTracking} alt="ecsTracking" />
           </div>
         </div>
       </div>
       <div className="container">
         <div className="row mt-5 pb-5 d-flex">
-          <div className="col-md-6 col-12">
+          <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
             <img
-              className="img-fluid"
+              className="img-fluid "
               src={SchoolManagement}
               alt="schoolManagement"
             />
           </div>
-          <div className="col-md-6 col-12">
+          <div className="col-md-6 col-12 d-flex align-items-center justify-content-center">
             <div className="row">
               <div className="col-md-10 offset-md-1">
-                <p
-                  className="mt-5 text-start  fs-6"
-                  style={{ color: "#08A391" }}
-                >
+                <p className=" text-start  fs-6" style={{ color: "#08A391" }}>
                   SCHOOL MANAGEMENT SYSTEM | ECS Cloud Infotech
                 </p>
                 <h3
-                  className="d-flex text-start display-5 fw-medium"
+                  className="d-flex text-start display-6 fw-medium"
                   style={{ color: "rgba(0, 0, 0, 0.722)" }}
                 >
                   School Management System Software
                 </h3>
-                <p className="pt-3 text-start fs-4">
+                <p className=" text-start fs-5">
                   Innovate Teaching, Promote Skill Building, and Achieve Greater
                   Learning Outcomes!
                 </p>
