@@ -39,6 +39,7 @@ function ContactUs() {
       console.log("Contact in Ecs Website:",data);
       data.company_id = 2;
       data.company = "ECSCloudInfotech";
+      data.lead_status = "Processed";
       try {
         const response = await api.post(`newClient`, data, {
           headers: {
