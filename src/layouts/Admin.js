@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -10,8 +10,18 @@ import Solutions from "../Components/Solutions";
 import AboutUs from "../Components/AboutUs";
 import ContactUs from "../Components/ContactUs";
 import { ToastContainer } from "react-toastify";
+import DemoBooking from "../Components/DemoBooking";
 
 function Admin() {
+  // useEffect(() => {
+  //   const whatsappScript = document.createElement("script");
+  //   whatsappScript.id = "bp-wa-script";
+  //   whatsappScript.src = "https://cdn.botpenguin.com/whatsapp-widget.js";
+  //   whatsappScript.defer = true;
+  //   whatsappScript.innerText = "dd3b5774-ab22-4d59-b494-b1cf98a2a2fe";
+  //   document.body.appendChild(whatsappScript);
+  // }, []);
+
   return (
     <>
       <BrowserRouter>
@@ -19,6 +29,8 @@ function Admin() {
         <Header />
         <Routes>
           <Route path="/" element={<Hero />} />
+          <Route path="/DemoBooking" element={<DemoBooking />} />
+
           <Route path="/products" element={<Products />} />
           <Route path="/cloudservices" element={<CloudServices />} />
           <Route path="/solutions" element={<Solutions />} />
