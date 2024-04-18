@@ -9,11 +9,13 @@ import CloudServices from "../Components/CloudServices";
 import Solutions from "../Components/Solutions";
 import AboutUs from "../Components/AboutUs";
 import ContactUs from "../Components/ContactUs";
+import { ToastContainer } from "react-toastify";
 
 function Admin() {
   return (
     <>
       <BrowserRouter>
+        <ToastContainer position="top-center" />
         <Header />
         <Routes>
           <Route path="/" element={<Hero />} />

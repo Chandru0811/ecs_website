@@ -6,23 +6,21 @@ import { toast } from "react-toastify";
 import * as yup from "yup";
 // import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import {api} from "../Config/URL";
+import { api } from "../Config/URL";
 
 const validationSchema = yup.object().shape({
   first_name: yup.string().required("*First Name is required"),
-  last_name:yup.string().required("*Last Name is required"),
+  last_name: yup.string().required("*Last Name is required"),
   phone: yup
     .string()
     .required("*Phone is required")
     .matches(/^[0-9]{10}$/, "*Phone Number must be 10 digits"),
   email: yup.string().required("*Email is required"),
-  description_info : yup.string().required("*Enquiry is required"),
+  description_info: yup.string().required("*Enquiry is required"),
 });
 
-
 function ContactUs() {
-
-  console.log("Api :",api);
+  console.log("Api :", api);
   // const companyId = sessionStorage.getItem("companyId");
   // const navigate = useNavigate();
   const formik = useFormik({
@@ -36,7 +34,7 @@ function ContactUs() {
     },
     validationSchema: validationSchema,
     onSubmit: async (data) => {
-      console.log("Contact in Ecs Website:",data);
+      console.log("Contact in Ecs Website:", data);
       data.company_id = 2;
       data.company = "ECSCloudInfotech";
       data.lead_status = "Processed";
@@ -49,6 +47,7 @@ function ContactUs() {
         if (response.status === 201) {
           toast.success("Thank You for Contacting Us! We'll be in touch soon!");
           // navigate("/login");
+          formik.resetForm();
         } else {
           toast.error(response.data.message);
         }
@@ -116,16 +115,16 @@ function ContactUs() {
                   First Name<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <input 
+                  <input
                     type="text"
-                     className={`form-control  ${
-                       formik.touched.first_name && formik.errors.first_name
-                         ? "is-invalid"
-                         : ""
-                     }`}
-                     {...formik.getFieldProps("first_name")}
-                     name="first_name"
-                     id="first_name"
+                    className={`form-control  ${
+                      formik.touched.first_name && formik.errors.first_name
+                        ? "is-invalid"
+                        : ""
+                    }`}
+                    {...formik.getFieldProps("first_name")}
+                    name="first_name"
+                    id="first_name"
                   />
                   {formik.touched.first_name && formik.errors.first_name && (
                     <p className="text-danger">{formik.errors.first_name}</p>
@@ -137,16 +136,16 @@ function ContactUs() {
                   Last Name<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <input 
+                  <input
                     type="text"
-                     className={`form-control  ${
-                       formik.touched.last_name && formik.errors.last_name
-                         ? "is-invalid"
-                         : ""
-                     }`}
-                     {...formik.getFieldProps("last_name")}
-                     name="last_name"
-                     id="last_name"
+                    className={`form-control  ${
+                      formik.touched.last_name && formik.errors.last_name
+                        ? "is-invalid"
+                        : ""
+                    }`}
+                    {...formik.getFieldProps("last_name")}
+                    name="last_name"
+                    id="last_name"
                   />
                   {formik.touched.last_name && formik.errors.last_name && (
                     <p className="text-danger">{formik.errors.last_name}</p>
@@ -158,16 +157,16 @@ function ContactUs() {
                   Eamil<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <input 
-                  type="email"
-                   name="email"
-                   className={`form-size form-control  ${
-                     formik.touched.email && formik.errors.email
-                       ? "is-invalid"
-                       : ""
-                   }`}
-                   {...formik.getFieldProps("email")}
-                   id="email"
+                  <input
+                    type="email"
+                    name="email"
+                    className={`form-size form-control  ${
+                      formik.touched.email && formik.errors.email
+                        ? "is-invalid"
+                        : ""
+                    }`}
+                    {...formik.getFieldProps("email")}
+                    id="email"
                   />
                   {formik.touched.email && formik.errors.email && (
                     <p className="text-danger">{formik.errors.email}</p>
@@ -179,7 +178,7 @@ function ContactUs() {
                   Mobile<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <input 
+                  <input
                     type="tel"
                     name="phone"
                     className={`form-size form-control  ${
@@ -200,13 +199,17 @@ function ContactUs() {
                   Enquiry<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
-                  <textarea {...formik.getFieldProps("description_info")}
-                     name="description_info"
+                  <textarea
+                    {...formik.getFieldProps("description_info")}
+                    name="description_info"
                     className="form-control "
                   ></textarea>
-                  {formik.touched.description_info && formik.errors.description_info && (
-                    <p className="text-danger">{formik.errors.description_info}</p>
-                  )}
+                  {formik.touched.description_info &&
+                    formik.errors.description_info && (
+                      <p className="text-danger">
+                        {formik.errors.description_info}
+                      </p>
+                    )}
                 </div>
               </div>
             </div>
