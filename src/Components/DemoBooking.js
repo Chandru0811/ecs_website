@@ -2,47 +2,47 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { api } from "../Config/URL";
-import CRM from "../assests/About.png"
+import CRM from "../assests/About.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object().shape({
-    appointmentFor: Yup.string().required("*Appointment for is required"),
-    appointmentStartDate: Yup.string().required(
-      "*Appointment start date is required"
-    ),
-    appointmentStartTime: Yup.string().required(
-      "*Appointment start Time is required"
-    ),
-    email: Yup.string().required("*Member is required"),
-    additionalInformation: Yup.string().required("*Description is required"),
-  });
+  appointmentFor: Yup.string().required("*Appointment for is required"),
+  appointmentStartDate: Yup.string().required(
+    "*Appointment start date is required"
+  ),
+  appointmentStartTime: Yup.string().required(
+    "*Appointment start Time is required"
+  ),
+  email: Yup.string().required("*Member is required"),
+  additionalInformation: Yup.string().required("*Description is required"),
+});
 const Book = () => {
-    console.log("api",api)
-    const formik = useFormik({
-        initialValues: {
-          appointmentFor: "",
-          email: "",
-          appointmentStartDate: "",
-          appointmentStartTime: "",
-          additionalInformation: "",
-        },
-        validationSchema: validationSchema,
-        onSubmit: async (data, { resetForm }) => {
-          data.companyId = 2;
-          data.typeOfAppointment = "website";
-          data.appointmentName = "General Enquiry";
-          console.log(data);
-          
-          try {
-            const response = await api.post(`/book-appointment`, data, {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            });
-            if (response.status === 201) {
-              toast.success("Thank You for Request Demo! We'll be in touch soon!");
-              const mailContent = `
+  console.log("api", api);
+  const formik = useFormik({
+    initialValues: {
+      appointmentFor: "",
+      email: "",
+      appointmentStartDate: "",
+      appointmentStartTime: "",
+      additionalInformation: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: async (data, { resetForm }) => {
+      data.companyId = 2;
+      data.typeOfAppointment = "website";
+      data.appointmentName = "General Enquiry";
+      console.log(data);
+
+      try {
+        const response = await api.post(`/book-appointment`, data, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.status === 201) {
+          toast.success("Thank You for Request Demo! We'll be in touch soon!");
+          const mailContent = `
               <!DOCTYPE html>
               <html lang="en">
                 <head>
@@ -174,29 +174,29 @@ const Book = () => {
                   </div>
                 </body>
               </html>`;
-              try {
-                const response = await api.post(`sendMail`, {
-                  toMail: data.email,
-                  fromMail: data.email,
-                  subject: data.appointmentName,
-                  htmlContent: mailContent,
-                });
-              } catch (error) {
-                toast.error("Mail Not Send");
-              }
-            } else {
-              toast.error("Appointment Created Unsuccessful.");
-            }
+          try {
+            const response = await api.post(`sendMail`, {
+              toMail: data.email,
+              fromMail: data.email,
+              subject: data.appointmentName,
+              htmlContent: mailContent,
+            });
           } catch (error) {
-            if (error.response?.status === 400) {
-              toast.warning(error.response?.data.message);
-            } else {
-              toast.error(error.response?.data.message);
-            }
+            toast.error("Mail Not Send");
           }
-          resetForm();
-        },
-      });
+        } else {
+          toast.error("Appointment Created Unsuccessful.");
+        }
+      } catch (error) {
+        if (error.response?.status === 400) {
+          toast.warning(error.response?.data.message);
+        } else {
+          toast.error(error.response?.data.message);
+        }
+      }
+      resetForm();
+    },
+  });
   return (
     <section className="signIn">
       <div style={{ backgroundColor: "#ecfafe" }}>
@@ -350,7 +350,7 @@ const Book = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Book
+export default Book;

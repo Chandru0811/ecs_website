@@ -41,10 +41,9 @@ function Hero() {
             </h5>
           </div>
         </div>
-        <Link to="/Book">
-        <button className="btn btn-primary ">
-          Book
-        </button></Link>
+        <Link to="/DemoBooking">
+          <button className="btn btn-primary ">Book</button>
+        </Link>
       </div>
       <div
         className="container-fluid"
