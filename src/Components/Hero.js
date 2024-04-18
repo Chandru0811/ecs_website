@@ -12,6 +12,7 @@ import whatsapp from "../assests/crm 1.png";
 import devOps from "../assests/accounting 1.png";
 import eCommerce from "../assests/school 1.png";
 import accounting from "../assests/accounting 2.png";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -40,6 +41,10 @@ function Hero() {
             </h5>
           </div>
         </div>
+        <Link to="/Book">
+        <button className="btn btn-primary ">
+          Book
+        </button></Link>
       </div>
       <div
         className="container-fluid"
