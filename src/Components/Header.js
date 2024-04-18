@@ -1,48 +1,48 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import Logo from '../assests/ecs_logo.png';
-import CRM from '../assests/crm_icon.png';
-import WhatsApp from '../assests/whatsapp_icon.png';
-import Attendance from '../assests/attendance_icon.png';
-import Tracking from '../assests/tracking_icon.png';
-import Bookings from '../assests/bookings_icon.png';
-import HRMS from '../assests/hrms_icon.png';
-import FaceRecognition from '../assests/facerecognition_icon.png';
-import SMS from '../assests/sms_icon.png';
-import MCS from '../assests/mcs_icon.png';
-import AWS from '../assests/aws_icon.png';
-import DevSecOps from '../assests/devsecops_icon.png';
-import Architecture from '../assests/architecture_icon.png';
-import Migration from '../assests/architecture_icon.png';
-import Education from '../assests/education_icon.png';
-import MarketingAgencies from '../assests/marketingagencies_icon.png';
-import SalesTeam from '../assests/salesteam_icon.png';
-import MarketingTeams from '../assests/marketingteams_icon.png';
-import CustomerSupport from '../assests/customersupport_icon.png';
-import ECommerce from '../assests/ecommerce_icon.png';
-import Healthcare from '../assests/healthcare_icon.png';
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+// import NavDropdown from "react-bootstrap/NavDropdown";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Logo from "../assests/ecs_logo.png";
+// import CRM from "../assests/crm_icon.png";
+// import WhatsApp from "../assests/whatsapp_icon.png";
+// import Attendance from "../assests/attendance_icon.png";
+// import Tracking from "../assests/tracking_icon.png";
+// import Bookings from "../assests/bookings_icon.png";
+// import HRMS from "../assests/hrms_icon.png";
+// import FaceRecognition from "../assests/facerecognition_icon.png";
+// import SMS from "../assests/sms_icon.png";
+// import MCS from "../assests/mcs_icon.png";
+// import AWS from "../assests/aws_icon.png";
+// import DevSecOps from "../assests/devsecops_icon.png";
+// import Architecture from "../assests/architecture_icon.png";
+// import Migration from "../assests/architecture_icon.png";
+// import Education from "../assests/education_icon.png";
+// import MarketingAgencies from "../assests/marketingagencies_icon.png";
+// import SalesTeam from "../assests/salesteam_icon.png";
+// import MarketingTeams from "../assests/marketingteams_icon.png";
+// import CustomerSupport from "../assests/customersupport_icon.png";
+// import ECommerce from "../assests/ecommerce_icon.png";
+// import Healthcare from "../assests/healthcare_icon.png";
 import { Link } from "react-router-dom";
 
 function OffcanvasExample() {
-
   const expand = "xl";
 
   return (
     <>
-      <Navbar key={expand} expand={expand} className="py-3" style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.3)", backgroundColor: "rgba(255, 255, 255, .82)" }}>
+      <Navbar key={expand} expand={expand} className="py-3 header">
         <Container fluid>
           <Navbar.Brand>
-           <Link to="/"><img src={Logo} alt='Logo' className='img-fluid' width={200} /></Link>
+            <Link to="/">
+              <img src={Logo} alt="Logo" className="img-fluid" width={230} />
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${expand}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-            placement="end"
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
@@ -50,7 +50,7 @@ function OffcanvasExample() {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-start flex-grow-1 pe-3">
+              <Nav className="justify-content-start align-items-center flex-grow-1 pe-3 navbar-nav">
                 {/* <NavDropdown
                   title="Products"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
@@ -245,20 +245,40 @@ function OffcanvasExample() {
                   </div>
                 </NavDropdown> */}
                 <Nav.Link className="nav-link-custom">
-                  <Link to='/products' className='text-decoration-none text-dark fw-bold nav-link-text'>Products</Link>
+                  <Link
+                    to="/products"
+                    className="text-decoration-none text-dark fw-bold nav-link-text"
+                  >
+                    Products
+                  </Link>
                 </Nav.Link>
                 <Nav.Link className="nav-link-custom">
-                  <Link to="/cloudservices" className='text-decoration-none text-dark fw-bold mx-3 nav-link-text'>Cloud Services</Link>
+                  <Link
+                    to="/cloudservices"
+                    className="text-decoration-none text-dark fw-bold mx-3 nav-link-text"
+                  >
+                    Cloud Services
+                  </Link>
                 </Nav.Link>
                 <Nav.Link className="nav-link-custom">
-                  <Link to="/solutions" className='text-decoration-none text-dark fw-bold nav-link-text'>Solutions</Link>
+                  <Link
+                    to="/solutions"
+                    className="text-decoration-none text-dark fw-bold nav-link-text"
+                  >
+                    Solutions
+                  </Link>
                 </Nav.Link>
                 <Nav.Link className="nav-link-custom">
-                  <Link to="/aboutus" className='text-decoration-none text-dark fw-bold mx-3 nav-link-text'>About</Link>
+                  <Link
+                    to="/aboutus"
+                    className="text-decoration-none text-dark fw-bold mx-3 nav-link-text"
+                  >
+                    About
+                  </Link>
                 </Nav.Link>
               </Nav>
               <Link to="/contactus">
-                <button type='button' className='btn btn-button'>
+                <button type="button" className="btn btn-button">
                   Contact
                 </button>
               </Link>
