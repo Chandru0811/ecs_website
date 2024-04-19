@@ -204,7 +204,7 @@ function Products() {
                   An Applicant Tracking System Built by Recruiters
                 </h3>
                 <p className="pt-3 text-start fs-5">
-                  Manatal is a comprehensive cloud-based ATS - Applicant
+                  ECS ATS is a comprehensive cloud-based ATS - Applicant
                   Tracking System to make your recruitment process easier.
                   Through effective pipelines, AI-driven insights, and applicant
                   matching, candidate management becomes a seamless task.
