@@ -29,24 +29,23 @@ import Healthcare from "../assests/healthcare_icon.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function OffcanvasExample() {
-
   const navigate = useNavigate();
   const expand = "xl";
   const handleProductsNavigate = () => {
-    navigate('/products');
-  }
+    navigate("/products");
+  };
   const handleCloudServicesNavigate = () => {
-    navigate('/cloudservices');
-  }
+    navigate("/cloudservices");
+  };
   const handleSolutionsNavigate = () => {
-    navigate('/solutions')
-  }
+    navigate("/solutions");
+  };
 
   return (
     <>
       <Navbar key={expand} expand={expand} className="py-3 header">
         <Container fluid>
-          <Navbar.Brand as={NavLink} to='/' >
+          <Navbar.Brand as={NavLink} to="/">
             <img src={Logo} alt="Logo" className="img-fluid" width={230} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -66,9 +65,9 @@ function OffcanvasExample() {
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
                   onClick={handleProductsNavigate}
                 >
-                  <div className='row' style={{ width: "625px" }}>
-                    <div className='col-md-6 col-12'>
-                      <NavDropdown.Item href="#crm" >
+                  <div className="row" style={{ width: "625px" }}>
+                    <div className="col-md-6 col-12">
+                      <NavDropdown.Item href="#crm">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
                             <img src={CRM} alt="CRM" width={30}></img>
@@ -76,7 +75,7 @@ function OffcanvasExample() {
                           CRM
                         </div>
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="#whatsappChatbot" >
+                      <NavDropdown.Item href="#whatsappChatbot">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
                             <img src={WhatsApp} alt="WhatsApp" width={30}></img>
@@ -87,7 +86,11 @@ function OffcanvasExample() {
                       <NavDropdown.Item href="#mobileAttendance">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
-                            <img src={Attendance} alt="WhatsApp" width={30}></img>
+                            <img
+                              src={Attendance}
+                              alt="WhatsApp"
+                              width={30}
+                            ></img>
                           </span>
                           Mobile Attendance App
                         </div>
@@ -101,8 +104,8 @@ function OffcanvasExample() {
                         </div>
                       </NavDropdown.Item>
                     </div>
-                    <div className='col-md-6 col-12'>
-                      <NavDropdown.Item href="#bookings" >
+                    <div className="col-md-6 col-12">
+                      <NavDropdown.Item href="#bookings">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
                             <img src={Bookings} alt="WhatsApp" width={30}></img>
@@ -121,7 +124,11 @@ function OffcanvasExample() {
                       <NavDropdown.Item href="#facialRecognition">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
-                            <img src={FaceRecognition} alt="WhatsApp" width={30}></img>
+                            <img
+                              src={FaceRecognition}
+                              alt="WhatsApp"
+                              width={30}
+                            ></img>
                           </span>
                           Facial Recognition App
                         </div>
@@ -143,9 +150,9 @@ function OffcanvasExample() {
                   className="mx-3"
                   onClick={handleCloudServicesNavigate}
                 >
-                  <div className='row' style={{ width: "575px" }}>
-                    <div className='col-md-6 col-12'>
-                      <NavDropdown.Item href="#managedcloudservices" >
+                  <div className="row" style={{ width: "575px" }}>
+                    <div className="col-md-6 col-12">
+                      <NavDropdown.Item href="#managedcloudservices">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
                             <img src={MCS} alt="CRM" width={30}></img>
@@ -170,7 +177,7 @@ function OffcanvasExample() {
                         </div>
                       </NavDropdown.Item>
                     </div>
-                    <div className='col-md-6 col-12'>
+                    <div className="col-md-6 col-12">
                       <NavDropdown.Item href="#awsinfrastructure">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
@@ -179,7 +186,7 @@ function OffcanvasExample() {
                           AWS Infrastructure
                         </div>
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="#awsarchitecturedesign" >
+                      <NavDropdown.Item href="#awsarchitecturedesign">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
                             <img src={Architecture} alt="CRM" width={30}></img>
@@ -195,8 +202,8 @@ function OffcanvasExample() {
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
                   onClick={handleSolutionsNavigate}
                 >
-                  <div className='row'>
-                    <div className='col-md-6 col-12'>
+                  <div className="row">
+                    <div className="col-md-6 col-12">
                       <NavDropdown.Item href="#Education">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
@@ -216,7 +223,11 @@ function OffcanvasExample() {
                       <NavDropdown.Item href="#CustomerSupport">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
-                            <img src={CustomerSupport} alt="CRM" width={30}></img>
+                            <img
+                              src={CustomerSupport}
+                              alt="CRM"
+                              width={30}
+                            ></img>
                           </span>
                           Customer Support
                         </div>
@@ -230,11 +241,15 @@ function OffcanvasExample() {
                         </div>
                       </NavDropdown.Item>
                     </div>
-                    <div className='col-md-6 col-12'>
+                    <div className="col-md-6 col-12">
                       <NavDropdown.Item href="#MarketingAgencies">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
-                            <img src={MarketingAgencies} alt="CRM" width={30}></img>
+                            <img
+                              src={MarketingAgencies}
+                              alt="CRM"
+                              width={30}
+                            ></img>
                           </span>
                           Marketing Agencies
                         </div>
@@ -242,7 +257,11 @@ function OffcanvasExample() {
                       <NavDropdown.Item href="#MarketingTeams">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
-                            <img src={MarketingTeams} alt="CRM" width={30}></img>
+                            <img
+                              src={MarketingTeams}
+                              alt="CRM"
+                              width={30}
+                            ></img>
                           </span>
                           Marketing Teams
                         </div>
@@ -282,18 +301,20 @@ function OffcanvasExample() {
                     Solutions
                   </Link>
                 </Nav.Link> */}
-                <Nav.Link className="mx-3" as={NavLink} to='/aboutus' >
+                <Nav.Link className="mx-3" as={NavLink} to="/aboutus">
                   About
                 </Nav.Link>
               </Nav>
-              <Link to="#">
-                <img
-                  src={AWS}
-                  alt="..."
-                  width="160"
-                  className=" img-fluid AWS_header "
-                />
-              </Link>
+              <div className="d-flex justify-content-center">
+                <Link to="#">
+                  <img
+                    src={AWS}
+                    alt="..."
+                    width="160"
+                    className=" img-fluid AWS_header "
+                  />
+                </Link>
+              </div>
               <div className="d-flex justify-content-center">
                 <Link to="/contactus">
                   <button type="button" className="btn btn-button">
