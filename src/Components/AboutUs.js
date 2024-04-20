@@ -9,6 +9,7 @@ import card6 from "../assests/card-6.png";
 import card7 from "../assests/card-7.png";
 import card8 from "../assests/card-8.png";
 import "../styles/Custom.css";
+import { Link } from "react-router-dom";
 
 function AboutUs() {
   return (
@@ -32,6 +33,9 @@ function AboutUs() {
               ECS Cloud Infotech's unique value proposition is to be at the same
               time very easy to use and fully integrated.
             </p>
+            <Link to="/DemoBooking">
+              <button className="btn btn-button">Book Demo</button>
+            </Link>
           </div>
           <div className="col-md-6 col-12">
             <img src={image} alt="" className="img-fluid"></img>
@@ -87,7 +91,10 @@ function AboutUs() {
             <div className="card card_bg_color_left mb-3 p-3">
               <div className="row">
                 <div className="col-md-8 col-12 card-body">
-                  <h5 className="card-title py-2" style={{ marginLeft: "15px" }}>
+                  <h5
+                    className="card-title py-2"
+                    style={{ marginLeft: "15px" }}
+                  >
                     Customized ERP Solutions for Streamlined Business Processes
                   </h5>
                   <p className="card-text" style={{ marginLeft: "15px" }}>
@@ -148,7 +155,10 @@ function AboutUs() {
                   />
                 </div>
                 <div className="col-md-8 col-12 card-body">
-                  <h5 className="card-title py-3" style={{ marginLeft: "15px" }}>
+                  <h5
+                    className="card-title py-3"
+                    style={{ marginLeft: "15px" }}
+                  >
                     Enhance Your Reach with Strategic Digital Marketing Services
                   </h5>
                   <p className="card-text" style={{ marginLeft: "15px" }}>
@@ -162,7 +172,7 @@ function AboutUs() {
             </div>
             <div className="card card_bg_color_right mb-3 p-3">
               <div className="row">
-              <div className="col-md-4 col-12">
+                <div className="col-md-4 col-12">
                   <img
                     src={card6}
                     className="card-img-right card_image_right"
@@ -183,12 +193,11 @@ function AboutUs() {
                     unique needs of each of our clients.
                   </p>
                 </div>
-              
               </div>
             </div>
             <div className="card card_bg_color_right mb-3 p-3">
               <div className="row">
-              <div className="col-md-4 col-12">
+                <div className="col-md-4 col-12">
                   <img
                     src={card7}
                     className="card-img-right card_image_right"
@@ -210,7 +219,6 @@ function AboutUs() {
                     development, and compliance management.
                   </p>
                 </div>
-                
               </div>
             </div>
           </div>

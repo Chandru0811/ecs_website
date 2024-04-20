@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import CRM from "../assests/About.png";
+import CRM from "../assests/bookAbout.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object().shape({
-  appointmentFor: Yup.string().required("*Appointment for is required"),
+  appointmentFor: Yup.string().required("*Name is required"),
+  Phone: Yup.string()
+    .matches(/^[0-9]+$/, "Must be only digits")
+    .min(8, "Phone number must be at least 8 digits")
+    .max(10, "Phone number must be at most 10 digits")
+    .required("*Phone is required"),
+  email: Yup.string().email().required("*Email is required"),
   appointmentStartDate: Yup.string().required(
     "*Appointment start date is required"
   ),
   appointmentStartTime: Yup.string().required(
     "*Appointment start Time is required"
   ),
-  email: Yup.string().required("*Member is required"),
   additionalInformation: Yup.string().required("*Description is required"),
 });
 const Book = () => {
@@ -21,6 +26,7 @@ const Book = () => {
     initialValues: {
       appointmentFor: "",
       email: "",
+      Phone: "",
       appointmentStartDate: "",
       appointmentStartTime: "",
       additionalInformation: "",
@@ -31,6 +37,33 @@ const Book = () => {
       data.typeOfAppointment = "website";
       data.appointmentName = "General Enquiry";
       console.log(data);
+
+      const payload = {
+        first_name: data.appointmentFor,
+        email: data.email,
+        company_id: 2,
+        company: "ECSCloudInfotech",
+        lead_status: "Processed",
+        description_info: data.additionalInformation,
+        phone: data.Phone,
+        lead_source: "Landing Page",
+      };
+      try {
+        const response = await axios.post(
+          `https://crmlah.com/ecscrm/api/newClient`,
+          payload,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        // toast.success("Lead Created Successfully");
+        console.log(response.data.message);
+      } catch (error) {
+        // toast.error("Lead Not Create");
+        console.log("Error");
+      }
 
       try {
         const response = await axios.post(
@@ -226,7 +259,7 @@ const Book = () => {
                     </h3>
                     <div className="col-12 mb-3">
                       <div className="">
-                        <lable className="form-label ">Appointment</lable>
+                        <lable className="form-label ">Name</lable>
                         <input
                           type="text"
                           name="appointmentFor"
@@ -249,6 +282,44 @@ const Book = () => {
                     </div>
                     <div className="col-12 mb-3">
                       <div className="">
+                        <lable className="form-label ">Phone</lable>
+                        <input
+                          type="text"
+                          name="Phone"
+                          id="Phone"
+                          {...formik.getFieldProps("Phone")}
+                          className={`form-size form-control mt-1 ${
+                            formik.touched.Phone && formik.errors.Phone
+                              ? "is-invalid"
+                              : ""
+                          }`}
+                        />
+                      </div>
+                      {formik.touched.Phone && formik.errors.Phone && (
+                        <p className="text-danger">{formik.errors.Phone}</p>
+                      )}
+                    </div>
+                    <div className="col-12 mb-3">
+                      <div className="">
+                        <lable className="form-label">Email</lable>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          {...formik.getFieldProps("email")}
+                          className={`form-size form-control mt-1  ${
+                            formik.touched.email && formik.errors.email
+                              ? "is-invalid"
+                              : ""
+                          }`}
+                        />
+                      </div>
+                      {formik.touched.email && formik.errors.email && (
+                        <p className="text-danger">{formik.errors.email}</p>
+                      )}
+                    </div>
+                    <div className="col-6 mb-3">
+                      <div className="">
                         <lable className="form-label">Prefer Date</lable>
                         <input
                           type="date"
@@ -270,7 +341,7 @@ const Book = () => {
                           </p>
                         )}
                     </div>
-                    <div className="col-12 mb-3">
+                    <div className="col-6 mb-3">
                       <div className="">
                         <lable className="form-label">Prefer Time</lable>
                         <input
@@ -297,27 +368,8 @@ const Book = () => {
 
                     <div className="col-12 mb-3">
                       <div className="">
-                        <lable className="form-label">Email</lable>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          {...formik.getFieldProps("email")}
-                          className={`form-size form-control mt-1  ${
-                            formik.touched.email && formik.errors.email
-                              ? "is-invalid"
-                              : ""
-                          }`}
-                        />
-                      </div>
-                      {formik.touched.email && formik.errors.email && (
-                        <p className="text-danger">{formik.errors.email}</p>
-                      )}
-                    </div>
-                    <div className="col-12 mb-3">
-                      <div className="">
                         <lable className="form-label">Enquiry</lable>
-                        <input
+                        <textarea
                           type="text"
                           name="additionalInformation"
                           //value={formData.additionalInformation || ""}
@@ -344,7 +396,7 @@ const Book = () => {
                         type="submit"
                         onClick={formik.handleSubmit}
                       >
-                        Book
+                        Book Now
                       </button>
                     </div>
                   </div>
