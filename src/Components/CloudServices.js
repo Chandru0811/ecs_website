@@ -7,7 +7,7 @@ import AwsMigration from "../assests/img-5.png";
 function CloudServices() {
   return (
     <section className="container-fluid" style={{ backgroundColor: "#E1FDFA" }}>
-      <div className="container">
+      <div className="container" id="managedcloudservices">
         <div className="row pt-5 d-flex">
           <div className="col-md-6 col-12 order-md-1 order-1">
             <div className="row">
@@ -16,7 +16,7 @@ function CloudServices() {
                   className="mt-5 text-start  fs-6"
                   style={{ color: "#08A391" }}
                 >
-                  Cloud Services Managemnet | Cloud ECS Infoteh
+                  Cloud Services Management | Cloud ECS Infoteh
                 </p>
                 <h5
                   className="d-flex text-start display-6 fw-medium"
@@ -42,7 +42,7 @@ function CloudServices() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container"  id="awsinfrastructure">
         <div className="row mt-5 d-flex">
           <div className="col-md-6 col-12">
             <img className="img-fluid d-flex justify-content-center align-items-center" src={EcsAws} alt="ecsAws" />
@@ -75,7 +75,7 @@ function CloudServices() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container"  id="awsdevops" >
         <div className="row pt-5 d-flex">
           <div className="col-md-6 col-12 order-md-1 order-1">
             <div className="row">
@@ -105,7 +105,7 @@ function CloudServices() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" id="awsarchitecturedesign">
         <div className="row mt-5 d-flex">
           <div className="col-md-6 col-12">
             <img className="img-fluid d-flex justify-content-center align-items-center" src={AwsArchitecture} alt="ecsAws" />
@@ -135,7 +135,7 @@ function CloudServices() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" id="awsmigrationservices" >
         <div className="row pt-5 pb-5 d-flex">
           <div className="col-md-6 col-12 order-md-1 order-1">
             <div className="row">
