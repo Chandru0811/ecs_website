@@ -8,12 +8,16 @@
   z-index: 10000;
   position: absolute;
   top: 0;
-  right: 20%;
 }
 
+@media only screen and (min-width: 1199px) {
+  .AWS_header {
+    right: 30%;
+  }
+}
 @media only screen and (max-width: 1199px) {
   .AWS_header {
-    display: none;
+    position: relative;
   }
 }
 
@@ -33,6 +37,20 @@
   width: 100px;
   height: 100px;
   margin-right: 120px;
+}
+
+.nav-link {
+  font-weight: 700;
+  color: black;
+}
+.nav-link:hover {
+  font-weight: 700;
+  color: #08a391;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  font-weight: 700;
+  color: #08a391;
 }
 
 .btn-button {
@@ -56,15 +74,45 @@
   background-color: #072b42;
   border-color: #072b42;
 }
+.btn-buttons {
+  color: #08a391;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #e7f1f1;
+  border-color: #08a391;
+  border-radius: 50px;
+  border: none;
+  padding: 18px 30px;
+  font-weight: 700;
+}
+.btn-buttons i {
+  font-weight: 600;
+}
+.btn-buttons:hover {
+  color: #fff;
+  background-color: #072b42;
+  border-color: #072b42;
+}
+
+@media only screen and (max-width: 1199px) {
+  .btn-buttons {
+    font-weight: normal;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .btn-button {
+    font-weight: normal;
+    font-size: 15px;
+  }
+}
 
 .dropdown-menu {
   --bs-dropdown-min-width: 30rem;
   --bs-dropdown-link-active-bg: var(--bs-tertiary-bg);
   --bs-dropdown-link-active-color: var(--bs-body-color);
-}
-
-.nav-link-custom:hover .nav-link-text {
-  color: #08a391 !important;
 }
 
 .footer_link {
@@ -135,4 +183,8 @@
   font-size: 35px;
   box-shadow: 2px 2px 3px #999;
   z-index: 100;
+}
+
+.Home_card:hover {
+  transform: scale(1.2);
 }
