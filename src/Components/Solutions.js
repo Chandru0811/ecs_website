@@ -10,7 +10,7 @@ import HealthCare from "../assests/sol_img_7.png";
 function Solutions() {
   return (
     <section className="container-fluid" style={{ backgroundColor: "#E1FDFA" }}>
-      <div className="container">
+      <div className="container" id="Education">
         <div className="row pt-5 d-flex">
           <div className="col-md-7 col-12 order-md-1 order-1">
             <div className="row">
@@ -39,7 +39,7 @@ function Solutions() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" id="SalesTeam">
         <div className="row mt-5 d-flex">
           <div className="col-md-5 col-12 d-flex justify-content-center align-items-center">
             <img
@@ -73,7 +73,7 @@ function Solutions() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" id="CustomerSupport">
         <div className="row mt-5 d-flex">
           <div className="col-md-7 col-12 order-md-1 order-1">
             <div className="row">
@@ -102,7 +102,7 @@ function Solutions() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" id="Healthcare">
         <div className="row mt-5 d-flex">
           <div className="col-md-5 col-12 d-flex justify-content-center align-items-center">
             <img
@@ -138,7 +138,7 @@ function Solutions() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" id="MarketingAgencies">
         <div className="row pt-5 d-flex">
           <div className="col-md-7 col-12 order-md-1 order-1">
             <div className="row pt-5">
@@ -165,7 +165,7 @@ function Solutions() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" id="MarketingTeams">
         <div className="row pt-5 d-flex">
           <div className="col-md-5 col-12 d-flex justify-content-center align-items-center">
             <img className="img-fluid" src={ECommerce} alt="ecsEcommerce" />
@@ -188,7 +188,7 @@ function Solutions() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container" id="ECommerce">
         <div className="row pt-5 pb-5 d-flex">
           <div className="col-md-7 col-12 order-md-1 order-1">
             <div className="row">
