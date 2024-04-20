@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import heroImg from "../assests/Group 1695.png";
 import mail from "../assests/image 1.png";
 import liveChat from "../assests/image 2.png";
@@ -13,8 +13,14 @@ import devOps from "../assests/accounting 1.png";
 import eCommerce from "../assests/school 1.png";
 import accounting from "../assests/accounting 2.png";
 import { Link } from "react-router-dom";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 function Hero() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 }); // Initialize AOS with default settings
+  }, []);
+
   return (
     <div>
       <div className="container">
@@ -23,15 +29,15 @@ function Hero() {
             <h1 className="text-center mt-5 fw-bolder">
               All-In-One Platform To Accelerate Your Business!
             </h1>
-            <h1 className="text-center fw-bolder" style={{ color: "#08A391" }}>
+            <h1 className="text-center fw-bolder" data-aos="fade-up" data-aos-delay="200" style={{ color: "#08A391" }}>
               Up To 70% Funding
             </h1>
           </div>
-          <div className="px-3 mb-3 mt-4 text-center">
+          <div className="px-3 mb-3 mt-4 text-center" data-aos="fade-up"data-aos-delay="200">
             <h5>
               Offering easy and effective solutions for even the most intricate
               problems, our &nbsp;
-              <span style={{ color: "#08A391" }}>
+              <span  style={{ color: "#08A391" }}>
                 CRM, Accounting,
                 <br /> HRMS, POS, ERP and E-Commerce.
               </span>
@@ -43,7 +49,7 @@ function Hero() {
         </div>
         <div className="d-flex mb-5 align-items-center justify-content-center">
           <Link to="/DemoBooking">
-            <button className="btn btn-button">Book</button>
+            <button className="btn btn-button">Book Demo</button>
           </Link>
         </div>
       </div>
@@ -59,7 +65,7 @@ function Hero() {
             Empowering progress, one click at a time.
           </h6>
         </div>
-        <div className=" text-center  mt-5 mb-5">
+        <div className=" text-center  mt-5 mb-5" data-aos="zoom-in-down" data-aos-delay="200">
           <img
             className="mb-5"
             style={{ maxWidth: "80%" }}
@@ -75,25 +81,27 @@ function Hero() {
       <div className="container-fluid p-3" style={{ background: "#08A391" }}>
         <div className=" row p-5">
           <div className="col-12 rounded" style={{ background: "white" }}>
-            <div className="d-flex text-center pt-3">
-              <div className="col-3">
-                <img style={{ maxWidth: "90%" }} src={mail} alt="mail" />
-              </div>
-              <div className="col-3">
-                <img
-                  style={{ maxWidth: "90%" }}
-                  src={liveChat}
-                  alt="livechat"
-                />
-              </div>
-              <div className="col-3">
-                <img style={{ maxWidth: "90%" }} src={sms} alt="sms" />
-              </div>
-              <div className="col-3">
-                <img style={{ maxWidth: "90%" }} src={voip} alt="voIP" />
-              </div>
+            <div className="d-flex text-center pt-3" data-aos="fade-up" data-aos-delay="200">
+              
+                <div className="col-3">
+                  <img style={{ maxWidth: "90%" }} src={mail} alt="mail" />
+                </div>
+                <div className="col-3">
+                  <img
+                    style={{ maxWidth: "90%" }}
+                    src={liveChat}
+                    alt="livechat"
+                  />
+                </div>
+                <div className="col-3">
+                  <img style={{ maxWidth: "90%" }} src={sms} alt="sms" />
+                </div>
+                <div className="col-3">
+                  <img style={{ maxWidth: "90%" }} src={voip} alt="voIP" />
+                </div>
+              
             </div>
-            <div className="d-flex text-center pb-3">
+            <div className="d-flex text-center pb-3" data-aos="fade-up" data-aos-delay="200">
               <div className="col-3">
                 <h6 className="text-center fw-bolder">Email</h6>
               </div>
@@ -109,7 +117,9 @@ function Hero() {
             </div>
           </div>
         </div>
-      </div>
+       
+        </div>
+      
 
       <div
         className="container-fluid pt-4 px-5"
@@ -119,12 +129,12 @@ function Hero() {
           Our <span style={{ color: "#08A391" }}>Services</span>
         </h1>
         <div className="row px-3">
-          <div className="col-md-3 p-3">
+          <div className="col-md-3 p-3 Home_card">
             <div
               className="px-3 rounded text-center"
               style={{ height: "100%", background: "#caf1ed" }}
             >
-              <div className="p-2">
+              <div className="p-2 `">
                 <img className="mt-3 bg-light p-2 rounded" src={crm2} alt="" />
               </div>
               <h5 className="px-3" style={{ color: "#121722" }}>
@@ -135,7 +145,7 @@ function Hero() {
               </p>
             </div>
           </div>
-          <div className="col-md-3 p-3">
+          <div className="col-md-3 p-3 Home_card">
             <div
               className="px-3 rounded text-center"
               style={{ height: "100%", background: "#caf1ed" }}
@@ -155,7 +165,7 @@ function Hero() {
               </p>
             </div>
           </div>
-          <div className="col-md-3 p-3">
+          <div className="col-md-3 p-3 Home_card">
             <div
               className="px-3 rounded text-center"
               style={{ height: "100%", background: "#caf1ed" }}
@@ -176,7 +186,7 @@ function Hero() {
               </p>
             </div>
           </div>
-          <div className="col-md-3 p-3">
+          <div className="col-md-3 p-3 Home_card">
             <div
               className="px-3 rounded text-center"
               style={{ height: "100%", background: "#caf1ed" }}
@@ -199,7 +209,7 @@ function Hero() {
           </div>
         </div>
         <div className="row px-3">
-          <div className="col-md-3 p-3">
+          <div className="col-md-3 p-3 Home_card">
             <div
               className="px-3 rounded text-center"
               style={{ height: "100%", background: "#caf1ed" }}
@@ -220,7 +230,7 @@ function Hero() {
               </p>
             </div>
           </div>
-          <div className="col-md-3 p-3">
+          <div className="col-md-3 p-3 Home_card">
             <div
               className="px-3 rounded text-center"
               style={{ height: "100%", background: "#caf1ed" }}
@@ -241,7 +251,7 @@ function Hero() {
               </p>
             </div>
           </div>
-          <div className="col-md-3 p-3">
+          <div className="col-md-3 p-3 Home_card">
             <div
               className="px-3 rounded text-center"
               style={{ height: "100%", background: "#caf1ed" }}
@@ -262,7 +272,7 @@ function Hero() {
               </p>
             </div>
           </div>
-          <div className="col-md-3 p-3">
+          <div className="col-md-3 p-3 Home_card">
             <div
               className="px-3 rounded text-center"
               style={{ height: "100%", background: "#caf1ed" }}

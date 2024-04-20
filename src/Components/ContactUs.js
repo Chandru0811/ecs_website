@@ -158,7 +158,7 @@ function ContactUs() {
               </div>
               <div className="col-md-6 col-12 mb-2">
                 <lable className="form-lable">
-                  Eamil<span className="text-danger">*</span>
+                  Email<span className="text-danger">*</span>
                 </lable>
                 <div className="mb-3">
                   <input
