@@ -53,6 +53,19 @@
   color: #08a391;
 }
 
+ @media (min-width: 992px){
+  .products{
+    width: 625px;
+  }
+  .cloudservices{
+    width: 575px;
+  }
+} 
+
+@media (max-width: 991px) {
+}
+
+
 .btn-button {
   color: #fff;
   padding: 0.5rem 0.9rem;

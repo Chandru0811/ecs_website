@@ -65,8 +65,8 @@ function OffcanvasExample() {
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
                   onClick={handleProductsNavigate}
                 >
-                  <div className="row" style={{ width: "625px" }}>
-                    <div className="col-md-6 col-12">
+                  <div className="row products">
+                    <div className="col-lg-6 col-12">
                       <NavDropdown.Item href="#crm">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
@@ -104,7 +104,7 @@ function OffcanvasExample() {
                         </div>
                       </NavDropdown.Item>
                     </div>
-                    <div className="col-md-6 col-12">
+                    <div className="col-lg-6  col-12">
                       <NavDropdown.Item href="#bookings">
                         <div style={{ verticalAlign: "middle" }}>
                           <span style={{ marginRight: "10px" }}>
@@ -150,7 +150,7 @@ function OffcanvasExample() {
                   className="mx-3"
                   onClick={handleCloudServicesNavigate}
                 >
-                  <div className="row" style={{ width: "575px" }}>
+                  <div className="row cloudservices">
                     <div className="col-md-6 col-12">
                       <NavDropdown.Item href="#managedcloudservices">
                         <div style={{ verticalAlign: "middle" }}>
