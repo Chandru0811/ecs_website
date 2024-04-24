@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 function AboutUs() {
   return (
     <section>
-      <div className="container mt-5 mb-5">
+      <div className="container  mb-5">
         <div className="row">
           <div className="col-md-6 col-12 d-flex flex-column justify-content-center">
             <h1 className="mb-4">
@@ -37,7 +37,7 @@ function AboutUs() {
               <button className="btn btn-button">Book Demo</button>
             </Link>
           </div>
-          <div className="col-md-6 col-12">
+          <div className="col-md-6 col-12" data-aos="zoom-in-left" data-aos-delay="150">
             <img src={image} alt="" className="img-fluid"></img>
           </div>
         </div>
@@ -45,7 +45,7 @@ function AboutUs() {
 
       <div className="container-fluid py-5" style={{ background: "#E1FDFA" }}>
         <div className="row mb-3">
-          <div className="col-md-3 col-12 mb-3 d-flex justify-content-center">
+          <div className="col-md-3 col-12 mb-3 d-flex justify-content-center ">
             <div className="card card_bg_color">
               <img src={card1} className="card-img-top card_image" alt="" />
               <div className="card-body mx-3">
@@ -64,7 +64,7 @@ function AboutUs() {
           <div className="col-md-9 col-12  d-flex flex-column justify-content-center">
             <div className="card card_bg_color_left mb-3 p-3">
               <div className="row">
-                <div className="col-md-8 col-12 card-body">
+                <div className="col-md-8 col-12 order-md-1 order-1 card-body">
                   <h5 className="card-title" style={{ marginLeft: "15px" }}>
                     Integrated Business Solutions for Enhanced Efficiency and
                     Growth
@@ -79,7 +79,7 @@ function AboutUs() {
                     transactions and engage customers on the go.
                   </p>
                 </div>
-                <div className="col-md-4 col-12">
+                <div className="col-md-4 col-12 order-md-2">
                   <img
                     src={card2}
                     className="card-img-right card_image_right"
@@ -90,7 +90,7 @@ function AboutUs() {
             </div>
             <div className="card card_bg_color_left mb-3 p-3">
               <div className="row">
-                <div className="col-md-8 col-12 card-body">
+                <div className="col-md-8 col-12 order-md-1 order-1 card-body">
                   <h5
                     className="card-title py-2"
                     style={{ marginLeft: "15px" }}
@@ -106,7 +106,7 @@ function AboutUs() {
                     the unique needs of each of our clients.
                   </p>
                 </div>
-                <div className="col-md-4 col-12">
+                <div className="col-md-4 col-12 order-md-2">
                   <img
                     src={card3}
                     className="card-img-right card_image_right"
@@ -117,7 +117,7 @@ function AboutUs() {
             </div>
             <div className="card card_bg_color_left mb-3 p-3">
               <div className="row">
-                <div className="col-md-8 col-12 card-body">
+                <div className="col-md-8 col-12 order-md-1 order-1 card-body">
                   <h5 className="card-title" style={{ marginLeft: "15px" }}>
                     Transformative ERP Solutions for Integrated Business
                     Management
@@ -131,7 +131,7 @@ function AboutUs() {
                     decision-making.
                   </p>
                 </div>
-                <div className="col-md-4 col-12">
+                <div className="col-md-4 col-12 order-md-2">
                   <img
                     src={card4}
                     className="card-img-right card_image_right"

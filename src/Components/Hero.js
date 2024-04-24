@@ -81,7 +81,7 @@ function Hero() {
       <div className="container-fluid p-3" style={{ background: "#08A391" }}>
         <div className=" row p-5">
           <div className="col-12 rounded" style={{ background: "white" }}>
-            <div className="d-flex text-center pt-3" data-aos="fade-up" data-aos-delay="200">
+            <div className="d-flex text-center pt-3" data-aos="fade-up" data-aos-delay="170">
               
                 <div className="col-3">
                   <img style={{ maxWidth: "90%" }} src={mail} alt="mail" />
@@ -101,7 +101,7 @@ function Hero() {
                 </div>
               
             </div>
-            <div className="d-flex text-center pb-3" data-aos="fade-up" data-aos-delay="200">
+            <div className="d-flex text-center pb-3" data-aos="fade-up" data-aos-delay="170">
               <div className="col-3">
                 <h6 className="text-center fw-bolder">Email</h6>
               </div>
