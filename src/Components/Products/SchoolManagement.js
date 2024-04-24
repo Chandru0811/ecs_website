@@ -4,7 +4,7 @@ import Schoolmanagement from "../../assests/schoolManagement.png";
 function SchoolManagement() {
   return (
     <div className="container">
-        <div className="row mt-5 pb-5 d-flex">
+        <div className="row d-flex" style={{paddingTop:"4rem"}}>
           <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
             <img
               className="img-fluid "

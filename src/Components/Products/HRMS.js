@@ -4,7 +4,7 @@ import EcsHr from "../../assests/ecsHr.png";
 function HRMS() {
   return (
     <div className="container">
-    <div className="row mt-5 d-flex">
+    <div className="row d-flex" style={{paddingTop:"6rem"}}>
       <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
         <img className="img-fluid" src={EcsHr} alt="ecsHr" />
       </div>

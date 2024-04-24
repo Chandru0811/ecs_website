@@ -4,7 +4,7 @@ import WhatsappApi from "../../assests/api.png";
 function WhatsAppChatbot() {
   return (
     <div className="container"> 
-        <div className="row mt-5 d-flex">
+        <div className="row d-flex" style={{paddingTop:"6rem"}}>
           <div className="col-md-6 col-12 order-md-1 order-1">
             <div className="row">
               <div className="col-md-10 offset-md-1">

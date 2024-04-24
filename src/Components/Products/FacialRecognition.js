@@ -4,7 +4,7 @@ import Facialrecognition from "../../assests/facialRecognition.webp";
 function FacialRecognition() {
   return (
     <div className="container">
-        <div className="row pt-5 d-flex">
+        <div className="row d-flex" style={{paddingTop:"7.5rem"}}>
           <div className="col-md-6 col-12">
             <img
               className="img-fluid d-flex justify-content-center align-items-center"

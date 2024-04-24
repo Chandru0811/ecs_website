@@ -4,7 +4,7 @@ import EcsAttendance from "../../assests/attendance.png";
 function MobileAttendance() {
   return (
     <div className="container">
-        <div className="row pt-5 d-flex">
+        <div className="row d-flex" style={{paddingTop:"6rem"}}>
           <div className="col-md-6 col-12  order-md-1 order-1">
             <div className="row pt-5">
               <div className="col-md-10 offset-md-1">

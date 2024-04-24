@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import EcsCrm from "../../assests/ecsCrm.png";
 import { Link } from "react-router-dom"
 
 function CRM() {
   return (
     <div className="container">
-      <div className="row pt-5 d-flex">
+      <div className="row d-flex" style={{paddingTop:"6rem"}}>
         <div className="col-md-6 col-12 order-md-1 order-1">
           <div className="row">
             <div className="col-md-10 offset-md-1">

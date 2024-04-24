@@ -4,7 +4,7 @@ import EcsTracking from "../../assests/tracking.png";
 function ApplicationTracking() {
   return (
     <div className="container">
-        <div className="row pt-5 d-flex">
+        <div className="row d-flex" style={{paddingTop:"4rem"}}>
           <div className="col-md-6 col-12 order-md-1 order-1">
             <div className="row">
               <div className="col-md-10 offset-md-1">
