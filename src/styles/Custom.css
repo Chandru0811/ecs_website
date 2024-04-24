@@ -53,20 +53,20 @@
   color: #08a391;
 }
 
-.text-md-center{
+.text-md-center {
   text-align: start !important;
 }
- @media (max-width: 1200px){
+@media (max-width: 1200px) {
   .text-md-center {
     text-align: center !important;
   }
-} 
+}
 
-@media (min-width: 992px){
-  .products{
+@media (min-width: 992px) {
+  .products {
     width: 625px;
   }
-  .cloudservices{
+  .cloudservices {
     width: 575px;
   }
 }
@@ -204,5 +204,5 @@
 }
 
 .Home_card:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
