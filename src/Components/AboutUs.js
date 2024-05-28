@@ -37,8 +37,12 @@ function AboutUs() {
               <button className="btn btn-button">Book Demo</button>
             </Link>
           </div>
-          <div className="col-md-6 col-12" data-aos="zoom-in-left" data-aos-delay="150">
-            <img src={image} alt="" className="img-fluid"></img>
+          <div
+            className="col-md-6 col-12"
+            data-aos="zoom-in-left"
+            data-aos-delay="150"
+          >
+            <img src={image} alt="About_Image" className="img-fluid" />
           </div>
         </div>
       </div>

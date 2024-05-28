@@ -206,3 +206,12 @@
 .Home_card:hover {
   transform: scale(1.05);
 }
+
+.footer-icon {
+  font-size: larger;
+  color: #08a391 !important;
+}
+
+.footer-icon:hover {
+  color: #072b42 !important;
+}
