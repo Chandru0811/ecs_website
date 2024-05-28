@@ -12,6 +12,7 @@ import ContactUs from "../Components/ContactUs";
 import { ToastContainer } from "react-toastify";
 import DemoBooking from "../Components/DemoBooking";
 import { FaWhatsapp } from "react-icons/fa";
+import PrivacyAndPolicy from "../Components/PrivacyAndPolicy";
 
 function Admin() {
   // useEffect(() => {
@@ -37,6 +38,7 @@ function Admin() {
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/privacyandpolicy" element={<PrivacyAndPolicy />} />
         </Routes>
         <a
           href="https://api.whatsapp.com/send/?phone=916379086118&text=Hello! I visited your website.&type=phone_number&app_absent=0"
