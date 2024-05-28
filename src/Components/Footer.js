@@ -130,7 +130,7 @@ function Footer() {
             <Link to="#" className="footer_link">
               <p>Terms of Services</p>
             </Link>
-            <Link to="#" className="footer_link">
+            <Link className="footer_link" to="/privacyandpolicy">
               <p>Privacy Policy</p>
             </Link>
           </div>
