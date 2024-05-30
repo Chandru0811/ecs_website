@@ -16,30 +16,28 @@ const validationSchema = Yup.object().shape({
   appointmentStartDate: Yup.string().required(
     "*Appointment start date is required"
   ),
-  timeSlotId: Yup.string().required(
-    "*Appointment start Time is required"
-  ),
+  timeSlotId: Yup.string().required("*Appointment start Time is required"),
   additionalInformation: Yup.string().required("*Description is required"),
 });
 const Book = () => {
   const [appointmentTime, setAppointmentTime] = useState([]);
-  console.log(appointmentTime)
+  console.log(appointmentTime);
   const formik = useFormik({
     initialValues: {
       first_name: "",
       last_name: "",
       email: "",
       Phone: "",
-      appointmentStartDate: new Date().toISOString().split('T')[0],
+      appointmentStartDate: new Date().toISOString().split("T")[0],
       timeSlotId: "",
       additionalInformation: "",
     },
-    // validationSchema: validationSchema,
+    validationSchema: validationSchema,
     onSubmit: async (data, { resetForm }) => {
       data.companyId = 2;
       data.typeOfAppointment = "website";
       data.appointmentName = "General Enquiry";
-      console.log("data",data);
+      // console.log("data", data);
       let selectedTimeSlot = "";
       appointmentTime.forEach((time) => {
         if (parseInt(data.timeSlotId) === time.id) {
@@ -47,7 +45,7 @@ const Book = () => {
         }
       });
       data.appointmentStartTime = selectedTimeSlot;
-      data.appointmentFor = `${data.first_name} ${data.last_name}`
+      data.appointmentFor = `${data.first_name} ${data.last_name}`;
       const payload = {
         first_name: data.first_name,
         last_name: data.last_name,
@@ -77,7 +75,6 @@ const Book = () => {
       }
 
       try {
-        
         const response = await axios.post(
           `https://crmlah.com/ecscrm/api/book-appointment`,
           data,
@@ -88,7 +85,6 @@ const Book = () => {
           }
         );
         if (response.status === 201) {
-          
           toast.success("Thank You for Request Demo! We'll be in touch soon!");
           const mailContent = `
               <!DOCTYPE html>
@@ -233,21 +229,18 @@ const Book = () => {
               }
             );
           } catch (error) {
-            
             toast.error("Mail Not Send");
           }
         } else {
-          
           toast.error("Appointment Created Unsuccessful.");
         }
       } catch (error) {
-       
-        console.log(error)
+        console.log(error);
         if (error.response?.status === 400) {
           toast.warning(error.response?.data.message);
         } else {
           toast.error(error.response?.data.message);
-          console.log(error.response?.data.message)
+          console.log(error.response?.data.message);
         }
       }
       resetForm();
@@ -257,7 +250,9 @@ const Book = () => {
   const fetchAppointmentTime = async () => {
     try {
       const response = await axios.get(
-        `https://crmlah.com/ecscrm/api/getTodayAvailableSlotsByCompanyId/${2}?date=${formik.values.appointmentStartDate}`,
+        `https://crmlah.com/ecscrm/api/getTodayAvailableSlotsByCompanyId/${2}?date=${
+          formik.values.appointmentStartDate
+        }`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -265,7 +260,6 @@ const Book = () => {
         }
       );
       setAppointmentTime(response.data);
-
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -279,7 +273,7 @@ const Book = () => {
     fetchAppointmentTime();
   }, [formik.values.appointmentStartDate]);
 
-  console.log("appointmentTime", appointmentTime)
+  console.log("appointmentTime", appointmentTime);
   return (
     <section className="signIn">
       <div style={{ backgroundColor: "#ecfafe" }}>
@@ -310,11 +304,12 @@ const Book = () => {
                           name="first_name"
                           id="first_name"
                           {...formik.getFieldProps("first_name")}
-                          className={`form-size form-control mt-1 ${formik.touched.first_name &&
+                          className={`form-size form-control mt-1 ${
+                            formik.touched.first_name &&
                             formik.errors.first_name
-                            ? "is-invalid"
-                            : ""
-                            }`}
+                              ? "is-invalid"
+                              : ""
+                          }`}
                         />
                       </div>
                       {formik.touched.first_name &&
@@ -332,19 +327,16 @@ const Book = () => {
                           name="last_name"
                           id="last_name"
                           {...formik.getFieldProps("last_name")}
-                          className={`form-size form-control mt-1 ${formik.touched.last_name &&
-                            formik.errors.last_name
-                            ? "is-invalid"
-                            : ""
-                            }`}
+                          className={`form-size form-control mt-1 ${
+                            formik.touched.last_name && formik.errors.last_name
+                              ? "is-invalid"
+                              : ""
+                          }`}
                         />
                       </div>
-                      {formik.touched.last_name &&
-                        formik.errors.last_name && (
-                          <p className="text-danger">
-                            {formik.errors.last_name}
-                          </p>
-                        )}
+                      {formik.touched.last_name && formik.errors.last_name && (
+                        <p className="text-danger">{formik.errors.last_name}</p>
+                      )}
                     </div>
                     <div className="col-12 mb-3">
                       <div className="">
@@ -354,10 +346,11 @@ const Book = () => {
                           name="Phone"
                           id="Phone"
                           {...formik.getFieldProps("Phone")}
-                          className={`form-size form-control mt-1 ${formik.touched.Phone && formik.errors.Phone
-                            ? "is-invalid"
-                            : ""
-                            }`}
+                          className={`form-size form-control mt-1 ${
+                            formik.touched.Phone && formik.errors.Phone
+                              ? "is-invalid"
+                              : ""
+                          }`}
                         />
                       </div>
                       {formik.touched.Phone && formik.errors.Phone && (
@@ -372,10 +365,11 @@ const Book = () => {
                           name="email"
                           id="email"
                           {...formik.getFieldProps("email")}
-                          className={`form-size form-control mt-1  ${formik.touched.email && formik.errors.email
-                            ? "is-invalid"
-                            : ""
-                            }`}
+                          className={`form-size form-control mt-1  ${
+                            formik.touched.email && formik.errors.email
+                              ? "is-invalid"
+                              : ""
+                          }`}
                         />
                       </div>
                       {formik.touched.email && formik.errors.email && (
@@ -390,11 +384,12 @@ const Book = () => {
                           name="appointmentStartDate"
                           id="appointmentStartDate"
                           {...formik.getFieldProps("appointmentStartDate")}
-                          className={`form-size form-control mt-1  ${formik.touched.appointmentStartDate &&
+                          className={`form-size form-control mt-1  ${
+                            formik.touched.appointmentStartDate &&
                             formik.errors.appointmentStartDate
-                            ? "is-invalid"
-                            : ""
-                            }`}
+                              ? "is-invalid"
+                              : ""
+                          }`}
                         />
                       </div>
                       {formik.touched.appointmentStartDate &&
@@ -443,11 +438,12 @@ const Book = () => {
                           //value={formData.additionalInformation || ""}
                           id="additionalInformation"
                           {...formik.getFieldProps("additionalInformation")}
-                          className={`form-control mt-1 ${formik.touched.additionalInformation &&
+                          className={`form-control mt-1 ${
+                            formik.touched.additionalInformation &&
                             formik.errors.additionalInformation
-                            ? "is-invalid"
-                            : ""
-                            }`}
+                              ? "is-invalid"
+                              : ""
+                          }`}
                         />
                       </div>
                       {formik.touched.additionalInformation &&
