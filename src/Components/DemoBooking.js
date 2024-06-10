@@ -4,6 +4,23 @@ import { toast } from "react-toastify";
 import CRM from "../assests/bookAbout.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+
+const getCurrentLocalDate = () => {
+  const now = new Date();
+  const offset = now.getTimezoneOffset() * 60000;
+  const localISOTime = new Date(now.getTime() - offset)
+    .toISOString()
+    .split("T")[0];
+  return localISOTime;
+};
+
+const getCurrentLocalTime = () => {
+  const now = new Date();
+  const offset = now.getTimezoneOffset() * 60000;
+  const localISOTime = new Date(now.getTime() - offset).toISOString();
+  return localISOTime;
+};
+
 const validationSchema = Yup.object().shape({
   first_name: Yup.string().required("*First Name is required"),
   last_name: Yup.string().required("*Last Name is required"),
@@ -28,7 +45,7 @@ const Book = () => {
       last_name: "",
       email: "",
       Phone: "",
-      appointmentStartDate: new Date().toISOString().split("T")[0],
+      appointmentStartDate: getCurrentLocalDate(),
       timeSlotId: "",
       additionalInformation: "",
     },
@@ -45,6 +62,7 @@ const Book = () => {
         }
       });
       data.appointmentStartTime = selectedTimeSlot;
+      data.appointmentstatus = "PENDING";
       data.appointmentFor = `${data.first_name} ${data.last_name}`;
       const payload = {
         first_name: data.first_name,
@@ -52,7 +70,7 @@ const Book = () => {
         email: data.email,
         company_id: 2,
         company: "ECSCloudInfotech",
-        lead_status: "Processed",
+        lead_status: "Pending",
         description_info: data.additionalInformation,
         phone: data.Phone,
         lead_source: "Landing Page",
@@ -219,15 +237,12 @@ const Book = () => {
                 </body>
               </html>`;
           try {
-            const response = await axios.post(
-              `https://crmlah.com/ecscrm/api/sendMail`,
-              {
-                toMail: data.email,
-                fromMail: data.email,
-                subject: data.appointmentName,
-                htmlContent: mailContent,
-              }
-            );
+            await axios.post(`https://crmlah.com/ecscrm/api/sendMail`, {
+              toMail: data.email,
+              fromMail: data.email,
+              subject: data.appointmentName,
+              htmlContent: mailContent,
+            });
           } catch (error) {
             toast.error("Mail Not Send");
           }
@@ -235,7 +250,7 @@ const Book = () => {
           toast.error("Appointment Created Unsuccessful.");
         }
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         if (error.response?.status === 400) {
           toast.warning(error.response?.data.message);
         } else {
@@ -246,6 +261,39 @@ const Book = () => {
       resetForm();
     },
   });
+
+  const filterAvailableSlots = (slots, selectedDate) => {
+    const currentTime = new Date();
+
+    // If the selected date is not today, return all slots
+    if (new Date(selectedDate).toDateString() !== currentTime.toDateString()) {
+      return slots;
+    }
+
+    // Convert slotTime to a Date object for comparison
+    const convertSlotToDate = (slotTime) => {
+      const [time, period] = slotTime.split(" ");
+      let [hours, minutes] = time.split(":").map(Number);
+
+      if (period.toLowerCase() === "pm" && hours !== 12) {
+        hours += 12;
+      } else if (period.toLowerCase() === "am" && hours === 12) {
+        hours = 0;
+      }
+
+      const slotDate = new Date(selectedDate);
+      slotDate.setHours(hours, minutes, 0, 0);
+
+      return slotDate;
+    };
+
+    // Filter out past slots
+    const availableSlots = slots.filter(
+      (slot) => convertSlotToDate(slot.slotTime) > currentTime
+    );
+
+    return availableSlots;
+  };
 
   const fetchAppointmentTime = async () => {
     try {
@@ -259,7 +307,14 @@ const Book = () => {
           },
         }
       );
-      setAppointmentTime(response.data);
+      console.log("Response Time", response.data);
+
+      const availableSlots = filterAvailableSlots(
+        response.data,
+        formik.values.appointmentStartDate
+      );
+      formik.setFieldValue("timeSlotId", "");
+      setAppointmentTime(availableSlots);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -271,6 +326,7 @@ const Book = () => {
 
   useEffect(() => {
     fetchAppointmentTime();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formik.values.appointmentStartDate]);
 
   console.log("appointmentTime", appointmentTime);
@@ -383,6 +439,7 @@ const Book = () => {
                           type="date"
                           name="appointmentStartDate"
                           id="appointmentStartDate"
+                          min={getCurrentLocalDate()}
                           {...formik.getFieldProps("appointmentStartDate")}
                           className={`form-size form-control mt-1  ${
                             formik.touched.appointmentStartDate &&
