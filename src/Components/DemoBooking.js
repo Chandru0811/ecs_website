@@ -70,7 +70,7 @@ const Book = () => {
         email: data.email,
         company_id: 2,
         company: "ECSCloudInfotech",
-        lead_status: "Pending",
+        lead_status: "PENDING",
         description_info: data.additionalInformation,
         phone: data.Phone,
         lead_source: "Landing Page",
